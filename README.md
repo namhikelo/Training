@@ -4,5 +4,7 @@
 
 # **Jobs in training time in Vietnix Company:**
 
-**Task 1**
+**Task 1** 
 1. [RemoteDB](https://github.com/namhikelo/Training_Vietnix/blob/main/Task%201/RemoteDB.md)
+2. [Compile_Nginx]
+3. [Linux Basic](https://github.com/namhikelo/Training_Vietnix/blob/main/Task%201/Task1.md)
