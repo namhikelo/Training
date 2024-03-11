@@ -4,3 +4,7 @@
 
 # **Jobs in training time in Vietnix Company:**
 
+* [Task 01] 
+
+    1. [RemoteDB](https://github.com/namhikelo/Training_Vietnix/blob/main/Task%201/RemoteDB.md)
+    2. 
