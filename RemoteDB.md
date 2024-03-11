@@ -39,3 +39,29 @@ CREATE USER 'root'@'171.244.18.3' IDENTIFIED BY 'Password';
 GRANT ALL PRIVILEGES ON wordpress.* TO 'root'@'171.244.18.3';
 FLUSH PRIVILEGES;
 ```
+
+Đổi IP:
+```sql
+UPDATE mysql.user SET Host='118.69.63.53' WHERE User='root' AND Host='171.244.18.3';
+FLUSH PRIVILEGES;
+```
+
+Lệnh kiểm tra: 
+
+``` SELECT User, Host FROM mysql.user; ```
+
+```
+MariaDB [(none)]> SELECT User, Host FROM mysql.user;
++---------------+--------------+
+| User          | Host         |
++---------------+--------------+
+| root          | %            |
+| user          | %            |
+| root          | 118.69.63.53 |
+| root          | 127.0.0.1    |
+| root          | ::1          |
+| root          | localhost    |
+| wordpressuser | localhost    |
++---------------+--------------+
+7 rows in set (0,002 sec)
+```
