@@ -32,3 +32,10 @@ GRANT ALL PRIVILEGES ON wordpress.* TO 'user'@'%';
 GRANT SELECT, INSERT, UPDATE, DELETE ON wordpress.* TO 'user'@'%';
 FLUSH PRIVILEGES;
 ```
+
+Cho user với IP cố định:
+```sql
+CREATE USER 'root'@'171.244.18.3' IDENTIFIED BY 'Password';
+GRANT ALL PRIVILEGES ON wordpress.* TO 'root'@'171.244.18.3';
+FLUSH PRIVILEGES;
+```
