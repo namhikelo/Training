@@ -13,6 +13,10 @@ Sau đó khởi động lại dịch vụ mysql:
 
 ## Tạo user truy cập
 
+Truy cập mysql:
+
+``` mysql -u root -p ```
+
 Cho user root:
 
 ```sql
