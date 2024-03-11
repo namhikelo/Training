@@ -20,16 +20,15 @@ Truy cập mysql:
 Cho user root:
 
 ```sql
-CREATE USER 'root'@'14.225.217.70' IDENTIFIED BY 'vietnix@1q2w3e';
-GRANT ALL PRIVILEGES ON wordpress.* TO 'root'@'14.225.217.70';
-GRANT SELECT, INSERT, UPDATE, DELETE ON wordpress.* TO 'root'@'14.225.217.70';
+CREATE USER 'root'@'%' IDENTIFIED BY 'Password';
+GRANT ALL PRIVILEGES ON wordpress.* TO 'root'@'%';
 FLUSH PRIVILEGES;
 ```
 
 Cho user :
 ```sql
-CREATE USER 'user'@'14.225.217.70 ' IDENTIFIED BY 'user@1q2w3e';
-GRANT ALL PRIVILEGES ON wordpress.* TO 'user'@'14.225.217.70 ';
-GRANT SELECT, INSERT, UPDATE, DELETE ON wordpress.* TO 'user'@'14.225.217.70 ';
+CREATE USER 'user'@'%' IDENTIFIED BY 'Password';
+GRANT ALL PRIVILEGES ON wordpress.* TO 'user'@'%';
+GRANT SELECT, INSERT, UPDATE, DELETE ON wordpress.* TO 'user'@'%';
 FLUSH PRIVILEGES;
 ```
