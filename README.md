@@ -6,5 +6,5 @@
 
 **Task 1** 
 1. [RemoteDB](https://github.com/namhikelo/Training_Vietnix/blob/main/Task%201/RemoteDB.md)
-2. [Compile_Nginx]
-3. [Linux Basic](https://github.com/namhikelo/Training_Vietnix/blob/main/Task%201/Task1.md)
+2. [Compile_Nginx](https://github.com/namhikelo/Training_Vietnix/blob/main/Task%201/Nginx.md)
+3. [Linux Basic](https://github.com/namhikelo/Training_Vietnix/blob/main/Task%201/Linux.md)
