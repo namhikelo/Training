@@ -2,10 +2,12 @@
 
 ```nano /etc/my.cnf.d/mariadb-server.cnf ```
 
-Bỏ ccomment "#" trước bind-address
+Bỏ ccomment "#" trước bind-address:
+
 ```bind-address            = 0.0.0.0 ```
 
 Sau đó khởi động lại dịch vụ mysql:
+
 ``` systemctl restart mysql ```
 
 
