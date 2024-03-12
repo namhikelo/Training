@@ -125,5 +125,6 @@ find [path] [search_conditions] [action]
 
 Example: 
 
-![find](img/find.png)
+![find](/img/find.png)
+
 
