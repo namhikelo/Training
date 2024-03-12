@@ -28,6 +28,8 @@ Tìm kiếm với giá trị -maxdepth, -mtime.
 
 #### Cấu trúc
 
+##### df
+
 ```bash
 df [option]
 ```
@@ -43,3 +45,7 @@ Option:
 -x <loại_hệ_thống>: Loại bỏ các phân vùng có loại hệ thống tệp tin được chỉ định.
 
 -i: Hiển thị thông tin về inode.
+
+![df](/img/df.png)
+
+##### du
