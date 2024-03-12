@@ -31,5 +31,9 @@ testcookie_session $remote_addr;: Định nghĩa cách thức tạo session cho 
 
 testcookie_arg ckattempt;: Định nghĩa tên của tham số (parameter) được sử dụng để xác định số lần cố gắng truy cập. Trong trường hợp này, tham số được sử dụng là ckattempt.
 
+testcookie_refresh_status <code>;: Định nghĩa mã trạng thái HTTP tùy chỉnh được sử dụng khi phục vụ trang HTML cho trường hợp sử dụng Testcookie. Mặc định là 200 (OK). Bạn có thể sử dụng mã trạng thái HTTP tùy chỉnh này để xử lý các trường hợp cụ thể, chẳng hạn như khi cần chuyển hướng người dùng đến một trang khác.
+
+testcookie_deny_keepalive (on|off);: Xác định xem kết nối nên được giữ mở hay không sau khi thiết lập cookie Testcookie. Mặc định là off. Khi cài đặt là on, kết nối sẽ được đóng ngay sau khi thiết lập cookie, không giữ kết nối với bot. Điều này giúp giảm tải cho máy chủ và bảo vệ cookie khỏi các cuộc tấn công của bot.
+
 Ở block location. Thêm dòng "testcookie on; " Để modules hoạt động.
 
