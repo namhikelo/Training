@@ -118,7 +118,7 @@ Liên quan thời gian về server
 
 ## stress
 
-Lệnh ``stress`` là công cụ được sử dụng để tạo ra tải cao trên hệ thống để kiểm tra và đánh giá hiệu suất.
+- Lệnh ``stress`` là công cụ được sử dụng để tạo ra tải cao trên hệ thống để kiểm tra và đánh giá hiệu suất.
 
 ![stress](/img/stress.png)
 
@@ -126,7 +126,7 @@ Tổng %CPU hiển thị là 200% vì có hai tiến trình đang chạy, mỗi 
 
 ## Ram
 
-Lệnh ``free -h`` để kiểm tra RAM.
+- Lệnh ``free -h`` để kiểm tra RAM.
 
 ![ram](/img/check_ram.png)
 
@@ -142,7 +142,7 @@ Lệnh ``free -h`` để kiểm tra RAM.
 
 ## Network
 
-Lệnh ```ip``` trong Linux được sử dụng để quản lý và cấu hình mạng.
+- Lệnh ```ip``` trong Linux được sử dụng để quản lý và cấu hình mạng.
 
 ```bash
 ip link show
@@ -185,5 +185,168 @@ Lệnh ``ls -a`` hiển thị tất cả các file và thư mục, bao gồm c�
 
 ## Tìm kiếm, copy, di chuyển,... file/thư mục
 
+- Tạo thư mục
 
+![mkdir](/img/mkdir.png)
 
+- Copy file / Thư mục
+
+![copy](/img/copy.png)
+
+- Di chuyển file / Thư mục
+
+![move](/img/move.png)
+
+## Làm quen với trình editor vim, vi, nano. Yêu cầu phải biết cách instert, xóa, save, thoát vim, vi, nano.
+
+### Vim / VI
+
+Hai trình editor Vim và Vi khá giống nhau.
+
+Tạo file :
+```bash
+vi [tên_file]
+```
+
+Insert file: Shift + i 
+
+Lưu file: ESC -> Shift + ; -> wq!
+
+### Nano
+
+Tạo file :
+```bash
+nano [tên_file]
+```
+
+Lưu file: Ctrl C + Y + Enter
+
+## Mount/Umount một phân vùng.
+
+- Lệnh ``mount`` được sử dụng để kết nối một hệ thống tập tin (file system) vào hệ thống Linux.
+
+![mount](/img/mount.png)
+
+- Lệnh ``umount`` được sử dụng để ngắt kết nối một hệ thống tập tin đã được gắn vào hệ thống Linux.
+
+![unmount](/img/unmount.png)
+
+- Sau khi add thêm một ổ cứng sdb ~ 5gb
+
+![mount](/img/lsblk.png)
+
+Tạo phân vùng mới.
+
+```bash
+sudo mkfs.ext4 /dev/sdb1
+```
+
+Kiểm tra:
+```bash
+lsblk
+```
+
+Mount ổ cứng:
+```bash
+mount /dev/sdb1 /mnt/test/
+```
+
+Unmount ổ cứng:
+```bash
+umount /mnt/test
+```
+
+![done_mount](/img/done_mount.png)
+
+### Symbolic Links (Symlinks):
+
+- Là con trỏ mềm tới tệp hoặc thư mục gốc. Nếu tệp gốc mất thì tệp mềm cũng vậy.
+
+![symbolic](/img/ln_symbolic.png)
+
+### Hard Links:
+
+Hard links là các liên kết giữa tên và dữ liệu thực của một tệp trong hệ thống tập tin, cho phép nhiều tên trỏ đến cùng một tệp vật lý. Nếu 1 tệp mất thì tệp còn lại còn hoạt động
+
+![hard_link](/img/hardlink.png)
+
+## Nén/Giải nén file tar.gz
+
+Lệnh ``tar`` là một công cụ trong Linux để tạo, quản lý và giải nén các tập tin được nén hoặc sao lưu.
+
+```bash
+-c: Tạo một tệp nén mới.
+-f <tệp sao lưu>: Chỉ định tên của tệp nén.
+-v: Hiển thị quá trình thực hiện lệnh.
+-x: Giải nén tệp từ tệp sao lưu.
+-z: Tạo tệp nén bằng gzip.
+```
+
+![tar](/img/tar.png)
+
+Giải nén
+
+![untar](/img/untar.png)
+
+## Nén/Giải nén file .zip
+
+Lệnh ``zip`` được sử dụng để nén tệp hoặc thư mục thành một tập tin nén .zip. 
+
+![zip](/img/zip.png)
+
+Giải nén
+
+![unzip](/img/unzip.png)
+
+## Tìm hiểu và thử nghiệm thử các command cơ bản:
+
+- telnet
+
+```bash
+telnet server-IP address
+```
+
+![telnet](/img/telnet.png)
+
+- ping
+
+```bash
+ping [options] {ip or hostname}
+ping {ip or hostname}
+```
+
+![ping](/img/ping.png)
+
+- hping3
+
+![hping3](/img/hping3.png)
+
+## ssh, ssh với key, ssh với port custom, gen key ssh.
+
+- ssh
+
+* Cấu trúc:
+
+```bash
+ssh {user}@{IP} -p 22
+```
+![ssh](/img/ssh.png)
+
+- Thay đổi port ssh
+
+```bash
+nano /etc/ssh/sshd_config
+Port {Port mong muốn}
+```
+
+Sau đó khởi động lại ssh
+
+```bash 
+systemctl restart ssh
+```
+
+- Key gen ssh
+
+![keygen](/img/keygen.png)
+
+## Show 2 dòng đầu file.
