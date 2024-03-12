@@ -26,9 +26,7 @@ Tìm kiếm với giá trị -maxdepth, -mtime.
 
 * du: Kiểm tra kích thước của các tệp tin cụ thể.
 
-#### Cấu trúc
-
-##### df
+#### Cấu trúc lệnh `df`
 
 ```bash
 df [option]
@@ -48,4 +46,23 @@ Option:
 
 ![df](/img/df.png)
 
-##### du
+#### Cấu trúc lệnh `du`
+
+```bash
+du [option] [path]
+```
+
+![du](/img/du.png)
+
+Kiểm tra phân vùng / 
+
+![df](/img/du_h.png)
+
+Kiểm tra phân vùng tmpfs 
+
+![df](/img/df_tmpfs.png)
+
+Kiểm tra inodes 
+
+![df](/img/df_inodes.png)
+
