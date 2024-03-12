@@ -2,33 +2,47 @@
 
 ### Dành cho OS Centos
 
-```nano /etc/my.cnf.d/mariadb-server.cnf ```
+```bash
+nano /etc/my.cnf.d/mariadb-server.cnf 
+```
 
 Bỏ ccomment "#" trước bind-address:
 
-```bind-address            = 0.0.0.0 ```
+```bash
+bind-address            = 0.0.0.0 
+```
 
 Sau đó khởi động lại dịch vụ mysql:
 
-``` systemctl restart mysql ```
+```bash 
+systemctl restart mysql 
+```
 
 ### Dành cho OS Ubuntu
 
-```nano /etc/mysql/mysql.conf.d/mysqld.cnf ```
+```bash
+nano /etc/mysql/mysql.conf.d/mysqld.cnf 
+```
 
 Bỏ ccomment "#" trước bind-address:
 
-```bind-address            = 0.0.0.0 ```
+```bash
+bind-address            = 0.0.0.0 
+```
 
 Sau đó khởi động lại dịch vụ mysql:
 
-``` systemctl restart mysql ```
+```bash 
+systemctl restart mysql 
+```
 
 ## Tạo user truy cập
 
 Truy cập mysql:
 
-``` mysql -u root -p ```
+```bash 
+mysql -u root -p 
+```
 
 Cho user root:
 
@@ -61,7 +75,9 @@ FLUSH PRIVILEGES;
 
 Lệnh kiểm tra: 
 
-``` SELECT User, Host FROM mysql.user; ```
+```bash 
+SELECT User, Host FROM mysql.user; 
+```
 
 ```
 MariaDB [(none)]> SELECT User, Host FROM mysql.user;
