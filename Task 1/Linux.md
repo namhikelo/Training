@@ -113,11 +113,17 @@ Redirect output messages to a file
 Redirect error and output messages to a file
 
 
-# Tìm kiếm một file, directory
+## Tìm kiếm một file, directory
+
+- Lệnh find được sử dụng để tìm kiếm các tệp tin trong một cấu trúc thư mục.
 
 ### Cấu trúc lệnh `find` :
 
 ```bash
 find [path] [search_conditions] [action]
 ```
+
+Example: 
+
+![find](img/find.png)
 
