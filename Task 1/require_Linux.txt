@@ -98,7 +98,7 @@ Dùng traceroute để trace từ máy remote đến ip 103.200.22.11 và nêu r
 
 netstat command
 
-print comand
+print command
 
 sort, uniq, wc, cut, join command
 

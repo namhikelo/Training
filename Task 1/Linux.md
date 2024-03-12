@@ -349,4 +349,146 @@ systemctl restart ssh
 
 ![keygen](/img/keygen.png)
 
-## Show 2 dòng đầu file.
+## SCP
+
+SCP là công cụ dòng lệnh để sao chép file/thư mục an toàn giữa các máy tính qua mạng. Lệnh này sử dụng SSH mã hóa dữ liệu, đảm bảo bảo mật.
+
+Cấu trúc:
+
+```bash
+scp [options] [source] [destination]
+```
+
+Giải thích:
+
+```bash
+[options]: Các tùy chọn cấu hình cho lệnh scp.
+[source]: Đường dẫn đến file hoặc thư mục nguồn cần sao chép.
+[destination]: Đường dẫn đến vị trí lưu trữ file hoặc thư mục sau khi sao chép.
+```
+
+Sao chép file từ máy cục bộ sang máy từ xa:
+
+```bash
+scp file.txt user@remote_host:/home/user/
+```
+
+Sao chép thư mục từ máy từ xa sang máy cục bộ:
+
+```bash
+scp -r user@remote_host:/home/user/directory /local/directory
+```
+
+Sao chép file giữa hai máy từ xa:
+
+```bash
+scp user1@remote_host1:/home/user1/file.txt user2@remote_host2:/home/user2/
+```
+
+## Xem nhanh nội dung của file.
+
+Lệnh ``cat`` là một công cụ dòng lệnh cho phép bạn xem nội dung của file văn bản.
+
+```bash
+cat ten_file
+```
+
+![cat](/img/cat.png)
+
+## Rsync file, folder, rsync incremental.
+
+- Rsync
+
+Rsync là công cụ để đồng bộ hóa file và thư mục giữa các máy tính.
+
+Cấu trúc:
+
+```bash
+rsync [options] source destination
+```
+
+![rsync](/img/rsync.png)
+
+- Rsync incremental
+
+Rsync incremental giúp đồng bộ hóa chỉ những thay đổi của file/thư mục, tiết kiệm thời gian và băng thông.
+
+Cấu trúc:
+
+```bash
+rsync -auv /local/directory user@remote_host:/home/user/
+```
+
+```bash
+-a để sao chép tất cả thuộc tính của file/thư mục.
+-u để chỉ cập nhật file mới hơn hoặc đã thay đổi trên máy đích.
+-i để bỏ qua file không thay đổi.
+```
+
+## Chèn một đoạn text vào cuối file.
+
+Cấu trúc:
+
+```bash
+cat >> File << EOF
+
+Nội dung text 
+
+EOF
+```
+
+## Show 2 dòng đầu file
+
+Cấu trúc:
+
+```bash
+head -n 2 filename
+```
+
+```bash
+head: Hiển thị phần đầu file.
+-n 2: Chỉ hiển thị 2 dòng đầu tiên.
+filename: Tên file bạn muốn hiển thị.
+```
+
+![head](/img/head.png)
+
+## Show 2 dòng cuối file
+
+Cấu trúc:
+
+```bash
+tail -n 2 filename
+```
+
+```bash
+tail: Hiển thị phần cuối file.
+-n 2: Chỉ hiển thị 2 dòng cuối cùng.
+filename: Tên file bạn muốn hiển thị.
+```
+
+![tail](/img/tail.png)
+
+## Dùng sed command để find and replace một trong string trong file text
+
+Lệnh ``sed`` là một công cụ dòng lệnh mạnh mẽ để chỉnh sửa file văn bản trong Unix/Linux
+
+Cấu trúc:
+
+```bash
+sed 's/chuỗi_cần_tìm/chuỗi_thay_thế/g' filename
+```
+
+```bash
+sed: Lệnh sed.
+'s/chuỗi_cần_tìm/chuỗi_thay_thế/g':
+s: Ký hiệu bắt đầu lệnh thay thế.
+/chuỗi_cần_tìm/: Chuỗi cần tìm kiếm.
+/chuỗi_thay_thế/: Chuỗi thay thế.
+g: Thay thế tất cả các lần xuất hiện của chuỗi cần tìm.
+```
+
+![sed](/img/sed.png)
+
+## netstat command
+
