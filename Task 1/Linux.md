@@ -492,3 +492,91 @@ g: Thay thế tất cả các lần xuất hiện của chuỗi cần tìm.
 
 ## netstat command
 
+- Lệnh ``netstat`` là một công cụ dòng lệnh mạnh mẽ để hiển thị thông tin chi tiết về các kết nối mạng của máy tính.
+
+Cấu trúc:
+
+```bash
+netstat [option]
+
+-a: Hiển thị tất cả các kết nối, bao gồm cả các kết nối không hoạt động.
+-n: Hiển thị địa chỉ IP và số cổng dưới dạng số thay vì tên máy chủ.
+-t: Hiển thị chỉ kết nối TCP.
+-u: Hiển thị chỉ kết nối UDP.
+-l: Hiển thị chỉ các cổng đang được lắng nghe.
+-s: Hiển thị số liệu thống kê về giao thức mạng.
+```
+
+![netstat](/img/netstat.png)
+
+## Print command 
+
+- Lệnh ``print`` trong Ubuntu có thể được sử dụng để in tệp văn bản, hình ảnh và các loại dữ liệu khác. Lệnh này có nhiều tùy chọn để định dạng đầu ra và kiểm soát cách thức in ấn.
+
+Cấu trúc:
+
+```bash
+lpr [option] [file or URL]
+
+-o: Xác định các tùy chọn in ấn.
+page-ranges: Chọn trang cụ thể để in.
+media: Chọn loại vật liệu in (ví dụ: giấy, ảnh).
+copies: Số lượng bản sao cần in.
+landscape: In ngang trang.
+portrait: In dọc trang.
+```
+
+In tệp văn bản:
+
+```bash
+lpr file.txt
+```
+
+## sort, uniq, wc, cut, join command
+
+- sort: là lệnh sắp xếp dữ liệu theo thứ tự.
+
+![sort](/img/sort.png)
+
+- uniq: là lệnh đếm số lượng dòng, từ và ký tự trong tệp
+
+![uniq](/img/uniq.png)
+
+- wc là một công cụ hữu ích trong hệ thống Unix để đếm số dòng, từ và ký tự trong file văn bản. 
+
+![wc](/img/wc.png)
+
+```bash
+Kết quả wc hello.txt là:
+
+11 dòng (lines): Số dòng trong file hello.txt.
+11 từ (words): Mỗi số được tính là một từ vì chúng riêng biệt trên mỗi dòng.
+22 ký tự (characters): Tổng số ký tự bao gồm các số và xuống dòng.
+```
+
+## Hiểu về Standard Input, Standard Output, Standard Error.
+
+**Standard Input (stdin):**
+
+Là nơi chương trình nhận dữ liệu từ người dùng, thường là bàn phím.
+Ví dụ: bạn nhập tên vào chương trình, chương trình sẽ đọc tên từ stdin.
+
+**Standard Output (stdout):**
+
+Là nơi chương trình hiển thị kết quả ra màn hình.
+Ví dụ: chương trình in ra kết quả tính toán lên màn hình.
+
+**Standard Error (stderr):**
+
+Là nơi chương trình hiển thị thông báo lỗi.
+Ví dụ: chương trình báo lỗi "file not found" ra stderr.
+
+## Redirect error to a file
+
+![Error_to_file](/img/error_to_file.png)
+
+## Redirect output messages to a file
+
+![mess_to_file](/img/mess_to_file.png)
+
+## Redirect error and output messages to a file
