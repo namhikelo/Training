@@ -580,3 +580,5 @@ Ví dụ: chương trình báo lỗi "file not found" ra stderr.
 ![mess_to_file](/img/mess_to_file.png)
 
 ## Redirect error and output messages to a file
+
+![aaa](/img/mount_hard.png)
