@@ -2,7 +2,6 @@
 
 ![header](/img/Vietnix.png) 
 
-# **Jobs in training time in Vietnix Company:**
 
 **Task 1** 
 1. [Reverse_Nginx]
