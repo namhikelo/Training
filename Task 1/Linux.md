@@ -1,118 +1,3 @@
-Tìm kiếm một file, directory
-
-Bằng tên hoặc bằng extension (ví dụ .jpg).
-
-Với giá trị -maxdepth, -mindepth
-
-Với giá trị -mtime gợi ý dùng lệnh find
-
-Xem dung lượng disk
-
-Kiểm tra phân vùng / là gì
-
-Kiểm tra phân vùng tmpfs là gì
-
-Kiểm tra inodes là gì
-
-Kiểm tra phân vùng lvm (physical volume, volume group, logical volume) là gì gợi ý dùng vgs,pvs,lvs để kiểm tra các thành phần lvm
-
-Kiểm tra cpu
-
-Kiểm tra cpu bằng top command. Giải thích về load average, us, sy, ni, id, wa, hi, si, st, zombie process, sleeping process
-
-Cài phần mềm stress (apt install stress) và chạy command sudo stress --cpu 2 --timeout 120.
-
-Sau đó mở một cửa sổ khác và dùng lệnh top để xem cpu load khi chạy tiến trình này. Giải thích tại sao %cpu lại load được 200%
-
-Kiểm tra Ram.
-
-Giải thích ram used, free, shared, buff/cache, available.
-
-Khi kiểm tra ram còn trống của linux thì đọc ở cột nào gợi ý dùng free command
-
-Kiểm tra network
-
-Kiểm tra card mạng, mac address (dùng command ip)
-
-Kiểm tra lượng traffic (Mbps) và packet/s (dùng command vnstat)
-
-Kiểm tra lượng traffic của từng ip in/out (dùng command iftop)
-
-bonding 2 port mạng với nhau dùng mode 4: 802.3ad. Yêu cầu sau khi down một port mạng thì traffic vẫn không rớt (dùng ping command để kiểm tra)
-
-Quản lý tiến trình
-
-Show một tiến trình bất kì (dùng ps command)
-
-Kill một tiến trình (dùng kill command)
-
-Liệt kê danh sách file/thư mục, cách show các file ẩn trong thư mục
-
-Tìm kiếm, copy, di chuyển,... file/thư mục
-
-Phân quyền thư mục, file: chmod, chown là gì ? chattr là gì ?
-
-Làm quen với trình editor vim, vi, nano. Yêu cầu phải biết cách instert, xóa, save, thoát vim, vi, nano.
-
-Mount/Umount một phân vùng.
-
-Add thêm một ổ cứng sdb ~ 5gb
-
-Mount mổ cứng vào /mnt/test
-
-Umount ổ cứng được mount ở /mnt/test
-
-Symbolic Links, Hard Links là gì
-
-Nén, giải nén.
-
-Nén/Giải nén file tar.gz
-
-Nén/Giải nén file .zip
-
-Tìm hiểu và thử nghiệm thử các command cơ bản:
-
-telnet
-
-ping
-
-hping3
-
-ssh, ssh với key, ssh với port custom, gen key ssh.
-
-scp file, scp folder.
-
-rsync file, folder, rsync incremental.
-
-Xem nhanh nội dung của file.
-
-Chèn một đoạn text vào cuối file.
-
-Show 2 dòng đầu file.
-
-Show 2 dòng cuối file.
-
-Dùng sed command để find and replace một trong string trong file text.
-
-Dùng traceroute để trace từ máy remote đến ip 103.200.22.11 và nêu ra quá trình đó cần đi qua các hop nào.
-
-netstat command
-
-print comand
-
-sort, uniq, wc, cut, join command
-
-Tìm kiểu các khái niệm cơ bản
-
-Hiểu về Standard Input, Standard Output, Standard Error.
-
-Redirect error to a file
-
-Redirect output messages to a file
-
-Redirect error and output messages to a file
-
-
 ## Tìm kiếm một file, directory
 
 - Lệnh find được sử dụng để tìm kiếm các tệp tin trong một cấu trúc thư mục.
@@ -123,8 +8,38 @@ Redirect error and output messages to a file
 find [path] [search_conditions] [action]
 ```
 
-Example: 
+Tìm kiếm bằng tên hoặc bằng extension.
 
 ![find](/img/find.png)
 
+Tìm kiếm với giá trị -maxdepth, -mindepth.
 
+![find_max_min](/img/find_max.png)
+
+Tìm kiếm với giá trị -maxdepth, -mtime.
+
+![find_mtime](/img/find_mtime.png)
+
+## Xem dung lượng disk
+
+* df: Xem dung lượng đĩa trên hệ thống.
+
+* du: Kiểm tra kích thước của các tệp tin cụ thể.
+
+#### Cấu trúc
+
+```bash
+df [option]
+```
+
+Option:
+
+-h: Hiển thị kết quả dễ đọc.
+
+-T: Hiển thị kiểu hệ thống tệp tin.
+
+-t <loại_hệ_thống>: Chỉ hiển thị các phân vùng có loại hệ thống tệp tin được chỉ định.
+
+-x <loại_hệ_thống>: Loại bỏ các phân vùng có loại hệ thống tệp tin được chỉ định.
+
+-i: Hiển thị thông tin về inode.
