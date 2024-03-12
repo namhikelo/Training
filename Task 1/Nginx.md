@@ -16,6 +16,9 @@ Testcookie trong nginx là một mô-đun mở rộng được sử dụng để
 
 Cài file bash để cài modules [Testcookie](https://github.com/namhikelo/Training_Vietnix/blob/main/script/install_Testcookie.sh).
 
+Nguồn tham khảo cài đặt [Link](https://hocvps.com/huong-dan-tang-toc-nginx-web-server-voi-pagespeed/comment-page-1/)
+
+
 ## Cấu hình Testcookie
 
 Ở block http:
