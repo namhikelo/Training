@@ -14,5 +14,19 @@ Testcookie trong nginx là một mô-đun mở rộng được sử dụng để
 
 # Cài đặt modules Testcookie
 
-Cài file bash để cài [Testcookie](https://github.com/namhikelo/Training_Vietnix/blob/main/script/install_Testcookie.sh).
+Cài file bash để cài modules [Testcookie](https://github.com/namhikelo/Training_Vietnix/blob/main/script/install_Testcookie.sh).
+
+## Cấu hình Testcookie
+
+Ở block http:
+
+testcookie_domain training.vietnix.tech;: Định nghĩa tên miền cho cookie được tạo bởi module Testcookie. Trong trường hợp này, cookie sẽ được gắn với tên miền 
+
+testcookie_secret 2b4589dac4caa9af154309d15a315075;: Xác định giá trị bí mật (secret) được sử dụng để tạo và xác minh chữ ký cho cookie Testcookie. Đây là một chuỗi hash được sử dụng để bảo vệ cookie khỏi việc chỉnh sửa không mong muốn.
+
+testcookie_session $remote_addr;: Định nghĩa cách thức tạo session cho cookie Testcookie. Trong trường hợp này, session được tạo dựa trên địa chỉ IP của máy khách ($remote_addr), có nghĩa là mỗi địa chỉ IP sẽ có một session riêng.
+
+testcookie_arg ckattempt;: Định nghĩa tên của tham số (parameter) được sử dụng để xác định số lần cố gắng truy cập. Trong trường hợp này, tham số được sử dụng là ckattempt.
+
+Ở block location. Thêm dòng "testcookie on; " Để modules hoạt động.
 
