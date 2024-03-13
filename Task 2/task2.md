@@ -20,11 +20,38 @@
 
 ## Cấu hình mở rộng LVM
 
-- Kiểm tra ổ đĩa đã và chưa cấu hình:
+- Kiểm tra ổ đĩa đã và đã cấu hình hay chưa:
 
 ```bash
 lsblk
 ```
 
 ![t2_lsblk](/img/t2_lsblk.png)
+
+Sau khi xác định ổ đĩa vừa thêm, ta cấu hình:
+
+- 1. **Tạo Physical Volume (PV)**: Xác định ổ đĩa muốn sử dụng cho LVM.
+
+```bash
+sudo pvcreate /dev/vdb
+```
+
+- 2. **Tạo Volume Group (VG)**: Tạo một VG và thêm PV vào đó.
+
+```bash
+sudo vgcreate my_vg /dev/vdb
+```
+
+- 3. Tạo Logical Volume (LV): Tạo các LV từ VG. Tạo một LV với dung lượng 30GB:
+
+```bash
+sudo lvcreate -L 30G -n my_lv my_vg
+```
+
+- 4. **Định dạng Logical Volume**: Định dạng LV về kiểu ext4.
+
+```bash
+sudo mkfs.ext4 /dev/my_vg/my_lv
+```
+
 
