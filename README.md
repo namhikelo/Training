@@ -13,7 +13,9 @@
 
 **Task 2**
 
-1. <a href='#1'> SSL
-1. <a href='#2'> Domain
-1. <a href='#3'> Mail Server
-1. <a href='#4'> DNS
+1. LVM
+2. SSL
+3. SSH
+4. Domain
+5. Mail Server
+6. DNS
