@@ -1,4 +1,4 @@
-# Testcookie nginx 
+# Testcookie nginx
 
 Testcookie trong nginx là một mô-đun mở rộng được sử dụng để bảo vệ trang web khỏi các cuộc tấn công giả mạo (forgery). Nó hoạt động bằng cách sử dụng "cookie profile" để phát hiện ra các yêu cầu không hợp lệ từ trình duyệt người dùng. Đơn giản là, Testcookie giúp ngăn chặn các cuộc tấn công giả mạo bằng cách kiểm tra và xác minh thông tin trong cookie từ trình duyệt người dùng.
 
@@ -17,7 +17,6 @@ Testcookie trong nginx là một mô-đun mở rộng được sử dụng để
 Cài file bash để cài modules [Testcookie](https://github.com/namhikelo/Training_Vietnix/blob/main/script/install_Testcookie.sh).
 
 Nguồn tham khảo cài đặt [Link](https://hocvps.com/huong-dan-tang-toc-nginx-web-server-voi-pagespeed/comment-page-1/)
-
 
 ### Cấu hình Testcookie
 
@@ -43,7 +42,7 @@ Module http_realip_module trong Nginx là một module mở rộng cho máy ch�
 
 ## Cơ chế hoạt động của Real_Ip ?
 
-1. Thiết lập Header từ Proxy: Proxy server thêm các header vào yêu cầu HTTP trước khi chúng đến máy chủ Nginx. Các header này thường chứa địa chỉ IP của client gốc, như X-Forwarded-For.
+1. Thiết lập Header từ Proxy: Proxy server thêm các header vào yêu cầu HTTP trước khi chúng đến máy chủ Nginx, chứa thông tin về client gốc, không nhất thiết chỉ là địa chỉ IP.
 
 * Header X-Forwarded-For là một header HTTP chứa địa chỉ IP của client gốc khi yêu cầu đi qua các proxy hoặc load balancer.
 
@@ -82,10 +81,3 @@ systemctl restart apache2
 ```
 
 ![ip_real](/img/ip_real.png)
-
-
-
-
-
-
-
