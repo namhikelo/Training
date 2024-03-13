@@ -53,3 +53,39 @@ Module http_realip_module trong Nginx là một module mở rộng cho máy ch�
 
 ### Cấu hình Real_Ip
 
+Khi chưa kích hoạt modules ``remoteip`` thì log apache sẽ nhận IP của nginx : 127.0.0.1
+
+![log_apache](/img/log_apache.png)
+
+* Lệnh ``a2enmod remoteip``  trong Apache được sử dụng để kích hoạt module mod_remoteip, cho phép Apache nhìn thấy địa chỉ IP thực sự của client khi máy chủ đứng sau một proxy hoặc load balancer.
+
+Trên web server cài thêm modules remoteip.
+
+```bash 
+a2enmod remoteip
+```
+
+Sau đó cấu hình apache2.conf
+
+```bash 
+nano /etc/apache2/apache2.conf
+```
+
+Thêm ``RemoteIPHeader X-Forwarded-For`` vào file apache2.conf
+
+* Lệnh RemoteIPHeader X-Forwarded-For chỉ định Apache sử dụng giá trị trong header X-Forwarded-For để xác định địa chỉ IP thực sự của client khi có proxy hoặc load balancer kết nối.
+
+Sau đó khởi động lại apache2:
+
+```bash
+systemctl restart apache2
+```
+
+![ip_real](/img/ip_real.png)
+
+
+
+
+
+
+
