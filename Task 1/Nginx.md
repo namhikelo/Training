@@ -41,6 +41,16 @@ Nguồn tham khảo cài đặt [Link](https://hocvps.com/huong-dan-tang-toc-ngi
 
 Module http_realip_module trong Nginx là một module mở rộng cho máy chủ HTTP, cho phép máy chủ xác định địa chỉ IP thực sự của client khi máy chủ đứng sau một proxy hoặc load balancer. Điều này giúp làm cho các ứng dụng web có thể nhận diện đúng địa chỉ IP của client khi có sự trung gian của các proxy hoặc load balancer.
 
+## Cơ chế hoạt động của Real_Ip ?
+
+1. Thiết lập Header từ Proxy: Proxy server thêm các header vào yêu cầu HTTP trước khi chúng đến máy chủ Nginx. Các header này thường chứa địa chỉ IP của client gốc, như X-Forwarded-For.
+
+* Header X-Forwarded-For là một header HTTP chứa địa chỉ IP của client gốc khi yêu cầu đi qua các proxy hoặc load balancer.
+
+2. Đọc và Sử Dụng Header: Module http_realip_module trong Nginx được cấu hình để đọc các giá trị của các header được thiết lập bởi proxy server. Nó sử dụng giá trị này làm địa chỉ IP thực sự của client.
+
+3. Cập Nhật Địa Chỉ IP: Nginx cập nhật địa chỉ IP của client trong quá trình xử lý yêu cầu. Điều này cho phép các ứng dụng web hoặc module khác có thể sử dụng địa chỉ IP chính xác của client cho các mục đích như xác thực hoặc ghi log.
+
 ### Cấu hình Real_Ip
 
 Khi module remoteip chưa được kích hoạt trong Apache, Apache sẽ ghi log với địa chỉ IP của máy chủ proxy (Nginx) thay vì địa chỉ IP của client gốc.

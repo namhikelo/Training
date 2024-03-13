@@ -1,0 +1,44 @@
+# Tìm hiểu về LVM 
+
+LVM là gì ?
+
+Physical Volume
+Volume Group
+Logical Volume
+
+SSL
+
+SSL là gì ?
+Có bao nhiêu cách chứng thực SSL ?
+CSR file dùng làm gì trong quá trình tạo SSL
+
+
+Sử dụng OpenSSL để gen file CSR sau đó request SSL cho domain <name>.techtraining.vietnix.tech
+
+Pem file là gì ?
+Private key ssl là gì ?
+PFX file là gì ? Cách chuyển từ file crt file sang PFX file.
+Bài tập: Trả lời các câu hỏi bên trên và thực hiện yêu cầu sau đó note vào file markdown tại: <name>/hosting-webserver/basic/ssl.md
+
+Domain
+
+Domain là gì ?
+Các trạng thái của domain
+Subdomain là gì?
+Virtual Hosts là gì?
+
+Bài tập: Trả lời các câu hỏi bên trên và thực hiện yêu cầu sau đó note vào file markdown tại: <name>/hosting-webserver/basic/domain.md
+
+Mail Server
+Tìm hiểu MX Record
+Tìm hiểu DKIM, SPF, PTR
+Debug khi khách hàng không nhận được email.
+Bài tập: Trả lời các câu hỏi bên trên và thực hiện yêu cầu sau đó note vào file markdown tại: <name>/hosting-webserver/basic/mail.md
+
+DNS
+
+DNS là gì ?
+Các loại recored DNS
+Nguyên tắc làm việc của DNS
+Cách phân giải địa chỉ DNS
+Bài tập: Trả lời các câu hỏi bên trên và thực hiện yêu cầu sau đó note vào file markdown tại: <name>/hosting-webserver/basic/dns.md
