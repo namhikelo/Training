@@ -39,19 +39,31 @@ sudo pvcreate /dev/vdb
 - 2. **Tạo Volume Group (VG)**: Tạo một VG và thêm PV vào đó.
 
 ```bash
-sudo vgcreate my_vg /dev/vdb
+sudo vgcreate kelo_vg  /dev/vdb
 ```
 
 - 3. Tạo Logical Volume (LV): Tạo các LV từ VG. Tạo một LV với dung lượng 30GB:
 
 ```bash
-sudo lvcreate -L 30G -n my_lv my_vg
+sudo lvcreate -L 29G -n kelo_lv kelo_vg
 ```
 
 - 4. **Định dạng Logical Volume**: Định dạng LV về kiểu ext4.
 
 ```bash
-sudo mkfs.ext4 /dev/my_vg/my_lv
+sudo mkfs.ext4  /dev/kelo_vg/kelo_lv 
 ```
+
+- 5. Mount vào hệ thống
+
+```bash
+mkdir /root/data
+mount /dev/kelo_vg/kelo_lv /root/data/
+```
+
+![mount](/img/t2_mount.png)
+
+# SSL
+
 
 
