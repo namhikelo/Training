@@ -13,7 +13,7 @@
 
 **Task 2**
 
-1. LVM
+1. [LVM](https://github.com/namhikelo/Training_Vietnix/blob/main/Task%202/task2.md#lvm)
 2. SSL
 3. SSH
 4. Domain
