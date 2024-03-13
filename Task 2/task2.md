@@ -237,8 +237,9 @@ Cách cấu hình MX trên quản lí DNS:
 ### Debug khi khách hàng không nhận được email.
 
 - Kiểm tra khi khách hàng không nhận được email:
-  - Sử dụng [MXToolbox](https://mxtoolbox.com/blacklists.aspx) để kiểm tra IP có trong danh sách blacklist không.
-  - KH không nhận được mail thì kiểm tra MX domain của KH đang nhận qua đâu.
+  - Sử dụng [MXToolbox](https://mxtoolbox.com/blacklists.aspx) để kiểm tra IP hoặc người gửi có trong danh sách blacklist không.
+  - KH không nhận được mail thì kiểm tra MX domain của KH đang nhận ở đâu.
+  - Check MX để kiểm tra chiều nhận.
   <!-- - Kiểm tra DKIM Record: Sử dụng [MXToolbox](https://mxtoolbox.com/blacklists.aspx) kiểm tra cấu hình DNS để xác minh bản ghi DKIM cho tên miền.
   - Kiểm tra DMARC Record: Sử dụng [MXToolbox](https://mxtoolbox.com/blacklists.aspx) kiểm tra cấu hình DNS có bản ghi DMARC cho tên miền. -->
 
@@ -263,3 +264,20 @@ Cách cấu hình MX trên quản lí DNS:
 
 ## Nguyên tắc làm việc của DNS ?
 
+- DNS hoạt động bằng cách thực hiện các bước sau:
+
+- 1. DNS query: Một truy vấn được gửi để tìm thông tin phân giải tên miền.
+- 2. Tìm trong file hosts: Kiểm tra trong file hosts trên hệ thống máy tính.
+- 3. Tìm trong cache: Kiểm tra trong bộ nhớ cache của trình duyệt hoặc ISP.
+- 4. Gọi đến DNS recursor: Nếu không tìm thấy trong cache, gửi truy vấn đến DNS recursor.
+- 5. Root Nameserver: DNS recursor gửi truy vấn đến Root DNS Server để hướng dẫn tìm kiếm.
+- 6. TLD Nameserver: Root DNS Server hướng dẫn tìm kiếm tới TLD Nameserver dựa trên phần mở rộng tên miền.
+- 7. Authoritative Nameserver: TLD Nameserver chỉ đường tới Authoritative Nameserver, chứa thông tin cụ thể về tên miền.
+- 8. Phản hồi: Authoritative Nameserver cung cấp địa chỉ IP tương ứng với tên miền cho DNS recursor.
+- 9. Phản hồi cuối cùng: DNS recursor gửi địa chỉ IP trả về cho máy tính yêu cầu, cho phép truy cập vào tên miền đã được phân giải.
+
+Các loại server tham gia bao gồm: DNS recursor, Root Nameserver, TLD Nameserver, và Authoritative Nameserver.
+
+## Cách phân giải địa chỉ DNS
+
+- DNS Server là hệ thống quản lý và phân giải tên miền thành địa chỉ IP trên Internet. Mỗi nhà cung cấp dịch vụ có DNS riêng để đảm bảo người dùng truy cập nhanh chóng. INTERNIC quản lý tất cả các DNS trên Internet nhưng không phân giải tên miền. DNS có khả năng truy vấn và trả lời yêu cầu từ các DNS khác.
