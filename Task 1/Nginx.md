@@ -1,8 +1,8 @@
-# Testcookie nginx là gì?
+# Testcookie nginx 
 
 Testcookie trong nginx là một mô-đun mở rộng được sử dụng để bảo vệ trang web khỏi các cuộc tấn công giả mạo (forgery). Nó hoạt động bằng cách sử dụng "cookie profile" để phát hiện ra các yêu cầu không hợp lệ từ trình duyệt người dùng. Đơn giản là, Testcookie giúp ngăn chặn các cuộc tấn công giả mạo bằng cách kiểm tra và xác minh thông tin trong cookie từ trình duyệt người dùng.
 
-# Cơ chế hoạt động của Testcookie ?
+## Cơ chế hoạt động của Testcookie ?
 
 1. Tạo và Gửi Cookie: Khi người dùng truy cập vào trang web, server sẽ tạo một cookie đặc biệt và gửi nó đến trình duyệt của người dùng.
 
@@ -12,14 +12,14 @@ Testcookie trong nginx là một mô-đun mở rộng được sử dụng để
 
 4. Từ Chối Yêu Cầu Không Hợp Lệ: Nếu mô-đun Testcookie phát hiện ra rằng yêu cầu không hợp lệ (ví dụ: thông tin cookie bị thay đổi), nó sẽ từ chối yêu cầu đó và không cho phép truy cập vào trang web.
 
-# Cài đặt modules Testcookie
+## Cài đặt modules Testcookie
 
 Cài file bash để cài modules [Testcookie](https://github.com/namhikelo/Training_Vietnix/blob/main/script/install_Testcookie.sh).
 
 Nguồn tham khảo cài đặt [Link](https://hocvps.com/huong-dan-tang-toc-nginx-web-server-voi-pagespeed/comment-page-1/)
 
 
-## Cấu hình Testcookie
+### Cấu hình Testcookie
 
 Ở block http:
 
@@ -36,4 +36,20 @@ testcookie_refresh_status (code); : Định nghĩa mã trạng thái HTTP tùy c
 testcookie_deny_keepalive (on|off);: Xác định xem kết nối nên được giữ mở hay không sau khi thiết lập cookie Testcookie. Mặc định là off. Khi cài đặt là on, kết nối sẽ được đóng ngay sau khi thiết lập cookie, không giữ kết nối với bot. Điều này giúp giảm tải cho máy chủ và bảo vệ cookie khỏi các cuộc tấn công của bot.
 
 Ở block location. Thêm dòng "testcookie on; " Để modules hoạt động.
+
+# Real_Ip Nginx
+
+Module http_realip_module trong Nginx là một module mở rộng cho máy chủ HTTP, cho phép máy chủ xác định địa chỉ IP thực sự của client khi máy chủ đứng sau một proxy hoặc load balancer. Điều này giúp làm cho các ứng dụng web có thể nhận diện đúng địa chỉ IP của client khi có sự trung gian của các proxy hoặc load balancer.
+
+## Cơ chế hoạt động của Real_Ip ?
+
+1. Thiết lập Header từ Proxy: Proxy server thêm các header vào yêu cầu HTTP trước khi chúng đến máy chủ Nginx. Các header này thường chứa địa chỉ IP của client gốc, như X-Forwarded-For.
+
+* Header X-Forwarded-For là một header HTTP chứa địa chỉ IP của client gốc khi yêu cầu đi qua các proxy hoặc load balancer.
+
+2. Đọc và Sử Dụng Header: Module http_realip_module trong Nginx được cấu hình để đọc các giá trị của các header được thiết lập bởi proxy server. Nó sử dụng giá trị này làm địa chỉ IP thực sự của client.
+
+3. Cập Nhật Địa Chỉ IP: Nginx cập nhật địa chỉ IP của client trong quá trình xử lý yêu cầu. Điều này cho phép các ứng dụng web hoặc module khác có thể sử dụng địa chỉ IP chính xác của client cho các mục đích như xác thực hoặc ghi log.
+
+### Cấu hình Real_Ip
 
