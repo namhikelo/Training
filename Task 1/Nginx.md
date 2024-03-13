@@ -23,17 +23,17 @@ Nguồn tham khảo cài đặt [Link](https://hocvps.com/huong-dan-tang-toc-ngi
 
 Ở block http:
 
-testcookie_domain training.vietnix.tech;: Định nghĩa tên miền cho cookie được tạo bởi module Testcookie. Trong trường hợp này, cookie sẽ được gắn với tên miền 
+* testcookie_domain training.vietnix.tech;: Định nghĩa tên miền cho cookie được tạo bởi module Testcookie. Trong trường hợp này, cookie sẽ được gắn với tên miền 
 
-testcookie_secret 2b4589dac4caa9af154309d15a315075;: Xác định giá trị bí mật (secret) được sử dụng để tạo và xác minh chữ ký cho cookie Testcookie. Đây là một chuỗi hash được sử dụng để bảo vệ cookie khỏi việc chỉnh sửa không mong muốn.
+* testcookie_secret 2b4589dac4caa9af154309d15a315075;: Xác định giá trị bí mật (secret) được sử dụng để tạo và xác minh chữ ký cho cookie Testcookie. Đây là một chuỗi hash được sử dụng để bảo vệ cookie khỏi việc chỉnh sửa không mong muốn.
 
-testcookie_session $remote_addr;: Định nghĩa cách thức tạo session cho cookie Testcookie. Trong trường hợp này, session được tạo dựa trên địa chỉ IP của máy khách ($remote_addr), có nghĩa là mỗi địa chỉ IP sẽ có một session riêng.
+* testcookie_session $remote_addr;: Định nghĩa cách thức tạo session cho cookie Testcookie. Trong trường hợp này, session được tạo dựa trên địa chỉ IP của máy khách ($remote_addr), có nghĩa là mỗi địa chỉ IP sẽ có một session riêng.
 
-testcookie_arg ckattempt;: Định nghĩa tên của tham số (parameter) được sử dụng để xác định số lần cố gắng truy cập. Trong trường hợp này, tham số được sử dụng là ckattempt.
+* testcookie_arg ckattempt;: Định nghĩa tên của tham số (parameter) được sử dụng để xác định số lần cố gắng truy cập. Trong trường hợp này, tham số được sử dụng là ckattempt.
 
-testcookie_refresh_status (code); : Định nghĩa mã trạng thái HTTP tùy chỉnh được sử dụng khi phục vụ trang HTML cho trường hợp sử dụng Testcookie. Mặc định là 200 (OK). Bạn có thể sử dụng mã trạng thái HTTP tùy chỉnh này để xử lý các trường hợp cụ thể, chẳng hạn như khi cần chuyển hướng người dùng đến một trang khác.
+* testcookie_refresh_status (code); : Định nghĩa mã trạng thái HTTP tùy chỉnh được sử dụng khi phục vụ trang HTML cho trường hợp sử dụng Testcookie. Mặc định là 200 (OK). Bạn có thể sử dụng mã trạng thái HTTP tùy chỉnh này để xử lý các trường hợp cụ thể, chẳng hạn như khi cần chuyển hướng người dùng đến một trang khác.
 
-testcookie_deny_keepalive (on|off);: Xác định xem kết nối nên được giữ mở hay không sau khi thiết lập cookie Testcookie. Mặc định là off. Khi cài đặt là on, kết nối sẽ được đóng ngay sau khi thiết lập cookie, không giữ kết nối với bot. Điều này giúp giảm tải cho máy chủ và bảo vệ cookie khỏi các cuộc tấn công của bot.
+* testcookie_deny_keepalive (on|off);: Xác định xem kết nối nên được giữ mở hay không sau khi thiết lập cookie Testcookie. Mặc định là off. Khi cài đặt là on, kết nối sẽ được đóng ngay sau khi thiết lập cookie, không giữ kết nối với bot. Điều này giúp giảm tải cho máy chủ và bảo vệ cookie khỏi các cuộc tấn công của bot.
 
 Ở block location. Thêm dòng "testcookie on; " Để modules hoạt động.
 
