@@ -240,6 +240,7 @@ Cách cấu hình MX trên quản lí DNS:
   - Sử dụng [MXToolbox](https://mxtoolbox.com/blacklists.aspx) để kiểm tra IP hoặc người gửi có trong danh sách blacklist không.
   - KH không nhận được mail thì kiểm tra MX domain của KH đang nhận ở đâu.
   - Check MX để kiểm tra chiều nhận.
+  - Kiểm tra mail người gửi có DKIM, DMARC, SPF chưa. 
   <!-- - Kiểm tra DKIM Record: Sử dụng [MXToolbox](https://mxtoolbox.com/blacklists.aspx) kiểm tra cấu hình DNS để xác minh bản ghi DKIM cho tên miền.
   - Kiểm tra DMARC Record: Sử dụng [MXToolbox](https://mxtoolbox.com/blacklists.aspx) kiểm tra cấu hình DNS có bản ghi DMARC cho tên miền. -->
 
