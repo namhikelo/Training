@@ -112,3 +112,52 @@ chain.pem là tập tin chứa chuỗi chứng chỉ (nếu có).
 
 # Domain
 
+- Domain là tên miền của một website hoạt động trên internet, đóng vai trò là một địa chỉ tĩnh, cố định.
+
+## Các trạng thái của domain
+
+- Các trạng thái của tên miền gồm:
+
+1. Active: Đang hoạt động.
+2. Expired: Hết hạn.
+3. Pending Delete: Đợi xóa.
+4. Server Transfer Prohibited: Cấm chuyển đổi (mức cơ quan quản lý).
+5. Server Renew Prohibited: Cấm gia hạn (mức cơ quan quản lý).
+6. Server Hold: Tạm ngưng (mức cơ quan quản lý).
+7. Server Delete Prohibited: Cấm xóa (mức cơ quan quản lý).
+8. Server Update Prohibited: Cấm cập nhật (mức cơ quan quản lý).
+9. Pending Transfer: Đợi chuyển đổi nhà đăng ký.
+10. Pending Delete: Đợi xóa tên miền.
+11. Inactive: Chưa được đăng ký thành công.
+12. Add Period: Giai đoạn thêm tên miền (sau khi đăng ký).
+13. Auto Renew Period: Giai đoạn tự động gia hạn.
+14. Transfer Period: Giai đoạn sau khi chuyển đổi tên miền.
+15. Redemption Period: Giai đoạn khôi phục.
+16. Pending Restore: Đợi khôi phục.
+17. Client Transfer Prohibited: Cấm chuyển đổi (người dùng).
+18. Client Renew Prohibited: Cấm gia hạn (người dùng).
+19. Client Hold: Tạm ngưng (người dùng).
+20. Client Delete Prohibited: Cấm xóa (người dùng).
+21. Client Update Prohibited: Cấm cập nhật (người dùng).
+22. OK: Đang hoạt động bình thường.
+
+- Các loại top-level domains (TLD) bao gồm:
+  - Country code top-level domains (ccTLD): Được sử dụng cho các quốc gia cụ thể, ví dụ: .us cho Hoa Kỳ, .vn cho Việt Nam.
+
+  - Generic top-level domains (gTLD): Được sử dụng cho mục đích chung, ví dụ: .com, .org, .net.
+
+  - Second-Level Domain (SLD): Phần mà người dùng liên kết với trang web của bạn, ví dụ: trong example.com, "example" là SLD.
+
+  - Third-Level Domain: Phần thứ ba của tên miền, thường là www. hoặc www1.
+
+## Subdomain là gì?
+
+- Subdomain là một phần của tên miền chính, thường được thêm vào trước tên miền chính để tạo ra các địa chỉ web con hoặc phân loại các dịch vụ khác nhau dưới một tên miền lớn. Ví dụ, trong "blog.example.com", "blog" là subdomain của "example.com".
+
+## Virtual Hosts là gì?
+
+- Virtual Hosts là tính năng trong máy chủ web cho phép chạy nhiều trang web trên cùng một máy chủ vật lý bằng cách phân biệt dựa trên tên miền hoặc địa chỉ IP.
+
+# Mail Server
+
+
