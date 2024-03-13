@@ -53,7 +53,7 @@ Module http_realip_module trong Nginx là một module mở rộng cho máy ch�
 
 ### Cấu hình Real_Ip
 
-Khi chưa kích hoạt modules ``remoteip`` thì log apache sẽ nhận IP của nginx : 127.0.0.1
+Khi module remoteip chưa được kích hoạt trong Apache, Apache sẽ ghi log với địa chỉ IP của máy chủ proxy (Nginx) thay vì địa chỉ IP của client gốc.
 
 ![log_apache](/img/log_apache.png)
 
