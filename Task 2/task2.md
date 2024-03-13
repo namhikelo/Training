@@ -42,7 +42,7 @@ sudo pvcreate /dev/vdb
 sudo vgcreate kelo_vg  /dev/vdb
 ```
 
-- 3. Tạo Logical Volume (LV): Tạo các LV từ VG. Tạo một LV với dung lượng 30GB:
+- 3. **Tạo Logical Volume (LV)**: Tạo các LV từ VG. Tạo một LV với dung lượng 30GB:
 
 ```bash
 sudo lvcreate -L 29G -n kelo_lv kelo_vg
@@ -54,7 +54,7 @@ sudo lvcreate -L 29G -n kelo_lv kelo_vg
 sudo mkfs.ext4  /dev/kelo_vg/kelo_lv 
 ```
 
-- 5. Mount vào hệ thống
+- 5. **Mount vào hệ thống**
 
 ```bash
 mkdir /root/data
@@ -65,5 +65,50 @@ mount /dev/kelo_vg/kelo_lv /root/data/
 
 # SSL
 
+- SSL là viết tắt của **"Secure Sockets Layer"** - một tiêu chuẩn công nghệ bảo mật đảm bảo việc truyền thông được mã hóa giữa máy chủ web và trình duyệt của người dùng. SSL đảm bảo rằng dữ liệu được truyền giữa máy chủ và trình duyệt của người dùng là riêng tư và hoàn chỉnh. Đây là tiêu chuẩn bảo mật hiện tại của hàng triệu trang web trên toàn thế giới, bảo vệ dữ liệu được truyền qua internet một cách an toàn.
 
+## Có bao nhiêu cách chứng thực SSL ?
+
+- Chứng chỉ SSL được phân chia thành 3 loại như sau:
+  - **DV SSL (Domain Validated)**: Chứng chỉ được xác thực với cấp độ tên miền.
+  - **OV SSL (Organization Validated)**: Chứng chỉ được xác thực với cấp độ doanh nghiệp/tổ chức.
+  - **EV SSL (Extended Validated)**: Chứng chỉ được xác thực với cấp độ doanh nghiệp/tổ chức mở rộng.
+
+
+### CSR file dùng làm gì trong quá trình tạo SSL
+
+- Tập tin CSR (Certificate Signing Request) được sử dụng để yêu cầu chứng nhận SSL từ một tổ chức cấp chứng chỉ (CA).
+
+### Sử dụng OpenSSL để gen file CSR sau đó request SSL cho domain <name>.techtraining.vietnix.tech
+
+openssl req -new -newkey rsa:2048 -nodes -keyout *.techtraining.vietnix.tech.key -out *.techtraining.vietnix.tech.csr
+
+### Pem file là gì ?
+
+- Tập tin PEM (Privacy Enhanced Mail) là một định dạng lưu trữ dữ liệu mã hóa, thường được sử dụng cho các chứng chỉ SSL, khóa riêng tư và các dữ liệu khác.
+
+### Private key ssl là gì ?
+
+- Private key trong SSL là một phần quan trọng của cặp khóa được sử dụng để giải mã dữ liệu được mã hóa và tạo chữ ký số để xác minh danh tính trong quá trình truyền thông bảo mật.
+
+### PFX file là gì ? Cách chuyển từ file crt file sang PFX file.
+
+- PFX là một loại định dạng tập tin chứa cả chứng chỉ SSL và khóa riêng tư được mã hóa. Nó thường được sử dụng để xuất và nhập chứng chỉ SSL và khóa riêng tư từ và đến các hệ thống hoặc dịch vụ khác nhau.
+
+* Cấu trúc:
+
+```bash
+openssl pkcs12 -export -out certificate.pfx -inkey privkey.pem -in cert.pem -certfile chain.pem
+
+Trong đó:
+
+certificate.pfx là tên của tập tin PFX bạn muốn tạo.
+privkey.pem là tập tin chứa khóa riêng tư.
+cert.pem là tập tin chứa chứng chỉ SSL.
+chain.pem là tập tin chứa chuỗi chứng chỉ (nếu có).
+```
+
+![PFX](/img/t2_PFX.png)
+
+# Domain
 

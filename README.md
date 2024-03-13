@@ -14,8 +14,7 @@
 **Task 2**
 
 1. [LVM](https://github.com/namhikelo/Training_Vietnix/blob/main/Task%202/task2.md#lvm)
-2. SSL
-3. SSH
-4. Domain
-5. Mail Server
-6. DNS
+2. [SSL](https://github.com/namhikelo/Training_Vietnix/blob/main/Task%202/task2.md#ssl)
+3. Domain
+4. Mail Server
+5. DNS
