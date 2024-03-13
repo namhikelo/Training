@@ -20,5 +20,11 @@
 
 ## Cấu hình mở rộng LVM
 
+- Kiểm tra ổ đĩa đã và chưa cấu hình:
 
+```bash
+lsblk
+```
+
+![t2_lsblk](/img/t2_lsblk.png)
 
