@@ -278,6 +278,18 @@ Cách cấu hình MX trên quản lí DNS:
 
 Các loại server tham gia bao gồm: DNS recursor, Root Nameserver, TLD Nameserver, và Authoritative Nameserver.
 
+![DNS](/img/t2_DNS.png)
+
 ## Cách phân giải địa chỉ DNS
 
-- DNS Server là hệ thống quản lý và phân giải tên miền thành địa chỉ IP trên Internet. Mỗi nhà cung cấp dịch vụ có DNS riêng để đảm bảo người dùng truy cập nhanh chóng. INTERNIC quản lý tất cả các DNS trên Internet nhưng không phân giải tên miền. DNS có khả năng truy vấn và trả lời yêu cầu từ các DNS khác.
+- Cách phân giải địa chỉ DNS:
+
+- 1. Người dùng nhập tên miền vào trình duyệt.
+- 2. Máy tính gửi yêu cầu đến DNS resolver.
+- 3. DNS resolver kiểm tra bộ nhớ cache xem có địa chỉ IP cho tên miền đó không.
+- 4. Nếu không có trong cache, DNS resolver gửi yêu cầu tới DNS root server.
+- 5. DNS root server hướng dẫn DNS resolver tới TLD (Top-Level Domain) server phù hợp.
+- 6. TLD server cung cấp thông tin về DNS authoritative server cho tên miền.
+- 7. DNS resolver liên hệ với DNS authoritative server để lấy địa chỉ IP.
+- 8. DNS resolver nhận được địa chỉ IP và trả về cho máy tính người dùng.
+- 9. Máy tính kết nối với địa chỉ IP nhận được để truy cập trang web.
