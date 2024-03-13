@@ -282,7 +282,7 @@ Các loại server tham gia bao gồm: DNS recursor, Root Nameserver, TLD Namese
 
 ## Cách phân giải địa chỉ DNS
 
-- Cách phân giải địa chỉ DNS:
+Cách phân giải địa chỉ DNS:
 
 1. Người dùng nhập tên miền vào trình duyệt.
 2. Máy tính gửi yêu cầu đến DNS resolver.
