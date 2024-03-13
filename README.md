@@ -17,4 +17,4 @@
 2. [SSL](https://github.com/namhikelo/Training_Vietnix/blob/main/Task%202/task2.md#ssl)
 3. [Domain](https://github.com/namhikelo/Training_Vietnix/blob/main/Task%202/task2.md#domain)
 4. [Mail Server]
-5. [DNS]
+5. [DNS](https://github.com/namhikelo/Training_Vietnix/blob/main/Task%202/task2.md#DNS)
