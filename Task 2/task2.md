@@ -160,4 +160,40 @@ chain.pem là tập tin chứa chuỗi chứng chỉ (nếu có).
 
 # Mail Server
 
+- Mail server là một hệ thống được sử dụng để gửi và nhận email giữa các người dùng hoặc các máy chủ email khác nhau trên Internet.
 
+## Tìm hiểu MX Record
+
+- MX Record là viết tắt của Mail Exchanger Record được định nghĩa là một bản ghi trong DNS zone dùng để định vị Mail Server cho một Domain. Một tên miền có thể được gán bởi nhiều bản ghi MX, việc này giúp cho các email của bạn không bị mất đi dữ liệu nếu ngưng hoạt động một thời gian
+
+Cách cấu hình MX trên quản lí DNS:
+
+![webmail](/img/t2_webmail.png)
+
+## Tìm hiểu DMARC, DKIM, SPF, PTR
+
+### **DMARC**
+
+- DMARC là một giao thức bảo mật email sử dụng SPF và DKIM để xác minh tính xác thực của các email. Nó giúp ngăn chặn các hoạt động lừa đảo email và tăng cường bảo mật cho hộp thư đến bằng cách cho phép người gửi định rõ cách xử lý các email không rõ nguồn gốc. DMARC cung cấp báo cáo chi tiết giúp ngăn chặn thư rác và xác định các email độc hại.
+
+![DMARC](/img/t2_dmarc.png)
+
+#### Cách hoạt động 
+
+- DMARC hoạt động bằng cách kết hợp hai chính sách là SPF và DKIM để xác thực tính hợp lệ của một email và đảm bảo tính xác thực của nguồn gốc email. SPF xác định các máy chủ được ủy quyền để gửi email từ một tên miền cụ thể, trong khi DKIM sử dụng cặp khóa private và public để chữ ký số hóa email và xác thực tính toàn vẹn của nó. Kết hợp, DMARC giúp ngăn chặn thư rác và lừa đảo email bằng cách cho phép người gửi định rõ cách xử lý các email không rõ nguồn gốc và cung cấp báo cáo để cải thiện quản lý bảo mật email.
+
+![pic](/img/t2_dmarc-dkim.png)
+
+### **DKIM**
+
+- DKIM (DomainKeys Identified Mail) là một phương pháp xác thực email bằng cách gắn một chữ ký điện tử vào email. Chữ ký này cho phép người nhận kiểm tra xem email có được gửi từ chủ sở hữu miền đúng hay không, và xác định liệu nội dung của email đã được chỉnh sửa hay không. DKIM không hiển thị cho người dùng cuối mà thường được xác thực ở cấp máy chủ.
+
+#### Cách hoạt động 
+
+- DKIM là một phương thức xác thực email, không phải là cách chống Spam trực tiếp. Tuy nhiên, nó hỗ trợ ngăn chặn thư giả mạo và lừa đảo bằng cách gắn chữ ký điện tử vào email. Hoạt động của DKIM bao gồm hai phần: tạo chữ ký và xác minh. 
+
+  - Bên gửi cần tạo cặp khóa private/public và cấu hình mail server sử dụng khóa private này để ký vào email trước khi gửi đi. 
+  
+  - Bên nhận sau đó kiểm tra email có chữ ký DKIM và xác minh nó bằng cách truy vấn DNS để lấy khóa public và giải mã. Nếu giải mã thành công, email được xác nhận nguồn gốc và đảm bảo.
+
+![pic](/img/t2_Dkim.png)
