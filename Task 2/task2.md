@@ -253,28 +253,28 @@ Cách cấu hình MX trên quản lí DNS:
 
 - Các loại recored DNS phổ biến ngày nay:
 
-- 1. A Record: Chuyển đổi tên miền thành địa chỉ IPv4.
-- 2. AAAA Record: Chuyển đổi tên miền thành địa chỉ IPv6.
-- 3. CNAME Record: Chuyển đổi tên miền thành tên miền khác (alias).
-- 4. MX Record: Xác định máy chủ email cho một tên miền.
-- 5. TXT Record: Lưu trữ thông tin văn bản không định dạng.
-- 6. NS Record: Xác định máy chủ DNS chính cho một tên miền.
-- 7. PTR Record: Chuyển đổi địa chỉ IP thành tên miền (ngược lại của A Record).
-- 8. SOA Record: Xác định thông tin về tên miền và máy chủ DNS chính.
+1. A Record: Chuyển đổi tên miền thành địa chỉ IPv4.
+2. AAAA Record: Chuyển đổi tên miền thành địa chỉ IPv6.
+3. CNAME Record: Chuyển đổi tên miền thành tên miền khác (alias).
+4. MX Record: Xác định máy chủ email cho một tên miền.
+5. TXT Record: Lưu trữ thông tin văn bản không định dạng.
+6. NS Record: Xác định máy chủ DNS chính cho một tên miền.
+7. PTR Record: Chuyển đổi địa chỉ IP thành tên miền (ngược lại của A Record).
+8. SOA Record: Xác định thông tin về tên miền và máy chủ DNS chính.
 
 ## Nguyên tắc làm việc của DNS ?
 
-- DNS hoạt động bằng cách thực hiện các bước sau:
+DNS hoạt động bằng cách thực hiện các bước sau:
 
-- 1. DNS query: Một truy vấn được gửi để tìm thông tin phân giải tên miền.
-- 2. Tìm trong file hosts: Kiểm tra trong file hosts trên hệ thống máy tính.
-- 3. Tìm trong cache: Kiểm tra trong bộ nhớ cache của trình duyệt hoặc ISP.
-- 4. Gọi đến DNS recursor: Nếu không tìm thấy trong cache, gửi truy vấn đến DNS recursor.
-- 5. Root Nameserver: DNS recursor gửi truy vấn đến Root DNS Server để hướng dẫn tìm kiếm.
-- 6. TLD Nameserver: Root DNS Server hướng dẫn tìm kiếm tới TLD Nameserver dựa trên phần mở rộng tên miền.
-- 7. Authoritative Nameserver: TLD Nameserver chỉ đường tới Authoritative Nameserver, chứa thông tin cụ thể về tên miền.
-- 8. Phản hồi: Authoritative Nameserver cung cấp địa chỉ IP tương ứng với tên miền cho DNS recursor.
-- 9. Phản hồi cuối cùng: DNS recursor gửi địa chỉ IP trả về cho máy tính yêu cầu, cho phép truy cập vào tên miền đã được phân giải.
+1. DNS query: Một truy vấn được gửi để tìm thông tin phân giải tên miền.
+2. Tìm trong file hosts: Kiểm tra trong file hosts trên hệ thống máy tính.
+3. Tìm trong cache: Kiểm tra trong bộ nhớ cache của trình duyệt hoặc ISP.
+4. Gọi đến DNS recursor: Nếu không tìm thấy trong cache, gửi truy vấn đến DNS recursor.
+5. Root Nameserver: DNS recursor gửi truy vấn đến Root DNS Server để hướng dẫn tìm kiếm.
+6. TLD Nameserver: Root DNS Server hướng dẫn tìm kiếm tới TLD Nameserver dựa trên phần mở rộng tên miền.
+7. Authoritative Nameserver: TLD Nameserver chỉ đường tới Authoritative Nameserver, chứa thông tin cụ thể về tên miền.
+8. Phản hồi: Authoritative Nameserver cung cấp địa chỉ IP tương ứng với tên miền cho DNS recursor.
+9. Phản hồi cuối cùng: DNS recursor gửi địa chỉ IP trả về cho máy tính yêu cầu, cho phép truy cập vào tên miền đã được phân giải.
 
 Các loại server tham gia bao gồm: DNS recursor, Root Nameserver, TLD Nameserver, và Authoritative Nameserver.
 
@@ -284,12 +284,12 @@ Các loại server tham gia bao gồm: DNS recursor, Root Nameserver, TLD Namese
 
 - Cách phân giải địa chỉ DNS:
 
-- 1. Người dùng nhập tên miền vào trình duyệt.
-- 2. Máy tính gửi yêu cầu đến DNS resolver.
-- 3. DNS resolver kiểm tra bộ nhớ cache xem có địa chỉ IP cho tên miền đó không.
-- 4. Nếu không có trong cache, DNS resolver gửi yêu cầu tới DNS root server.
-- 5. DNS root server hướng dẫn DNS resolver tới TLD (Top-Level Domain) server phù hợp.
-- 6. TLD server cung cấp thông tin về DNS authoritative server cho tên miền.
-- 7. DNS resolver liên hệ với DNS authoritative server để lấy địa chỉ IP.
-- 8. DNS resolver nhận được địa chỉ IP và trả về cho máy tính người dùng.
-- 9. Máy tính kết nối với địa chỉ IP nhận được để truy cập trang web.
+1. Người dùng nhập tên miền vào trình duyệt.
+2. Máy tính gửi yêu cầu đến DNS resolver.
+3. DNS resolver kiểm tra bộ nhớ cache xem có địa chỉ IP cho tên miền đó không.
+4. Nếu không có trong cache, DNS resolver gửi yêu cầu tới DNS root server.
+5. DNS root server hướng dẫn DNS resolver tới TLD (Top-Level Domain) server phù hợp.
+6. TLD server cung cấp thông tin về DNS authoritative server cho tên miền.
+7. DNS resolver liên hệ với DNS authoritative server để lấy địa chỉ IP.
+8. DNS resolver nhận được địa chỉ IP và trả về cho máy tính người dùng.
+9. Máy tính kết nối với địa chỉ IP nhận được để truy cập trang web.
