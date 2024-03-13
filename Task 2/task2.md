@@ -197,3 +197,69 @@ Cách cấu hình MX trên quản lí DNS:
   - Bên nhận sau đó kiểm tra email có chữ ký DKIM và xác minh nó bằng cách truy vấn DNS để lấy khóa public và giải mã. Nếu giải mã thành công, email được xác nhận nguồn gốc và đảm bảo.
 
 ![pic](/img/t2_Dkim.png)
+
+### **SPF**
+
+- SPF record là một bản ghi DNS được sử dụng để xác định mail server được phép gửi email từ tên miền của bạn. Mục đích của SPF là ngăn chặn việc gửi email spam hoặc email giả mạo từ tên miền của bạn. SPF là một công cụ hữu ích trong việc chống lại email spam.
+
+### Cách tạo bản ghi SPF
+
+- Truy cập quản lí DNS của domain và thêm 1 bản ghi:
+  - Host record: Tên domain or "@" 
+  - Record Type: TXT
+  - Address: v=spf1 ip4:14.225.217.70 -all
+
+*Note:* -all có nghĩa là nếu một email không phù hợp với bất kỳ quy tắc nào trong bản ghi SPF, nó sẽ bị từ chối.
+
+### **PTR**
+
+- Bản ghi PTR (Pointer Record) là một loại bản ghi trong hệ thống DNS được sử dụng để ánh xạ một địa chỉ IP (IPv4 hoặc IPv6) thành một tên miền. Bản ghi PTR hoạt động theo chiều ngược lại so với các bản ghi DNS thông thường: thay vì ánh xạ tên miền thành địa chỉ IP (như trong bản ghi A hoặc AAAA), nó ánh xạ địa chỉ IP thành tên miền. 
+
+- Các trường hợp sử dụng bản ghi PTR bao gồm:
+
+  - Xác minh địa chỉ IP: Sử dụng để xác minh máy chủ hoặc máy tính có địa chỉ IP cụ thể.
+  - Bộ lọc spam và phòng chống lừa đảo: Kiểm tra xem máy chủ gửi email có khớp với tên miền mà nó tự xác minh hay không.
+  - Xác định danh tính máy chủ: Cung cấp thông tin về tên miền của máy chủ từ địa chỉ IP.
+
+**Các bản ghi PTR được định dạng như sau:**
+
+```bash
+1.1.168.192.in-addr.arpa. IN PTR example.com.
+```
+
+- Trong đó:
+
+  - 1.1.168.192: Địa chỉ IP muốn ánh xạ, được ghi đảo ngược.
+  - in-addr.arpa.: Phần cố định của định dạng PTR cho việc đảo ngược DNS.
+  - IN PTR: Xác định bản ghi là PTR và sử dụng để ánh xạ địa chỉ IP thành tên miền.
+  - example.com: Tên miền mà địa chỉ IP sẽ được ánh xạ đến.
+
+### Debug khi khách hàng không nhận được email.
+
+- Kiểm tra khi khách hàng không nhận được email:
+  - Sử dụng [MXToolbox](https://mxtoolbox.com/blacklists.aspx) để kiểm tra IP có trong danh sách blacklist không.
+  - KH không nhận được mail thì kiểm tra MX domain của KH đang nhận qua đâu.
+  <!-- - Kiểm tra DKIM Record: Sử dụng [MXToolbox](https://mxtoolbox.com/blacklists.aspx) kiểm tra cấu hình DNS để xác minh bản ghi DKIM cho tên miền.
+  - Kiểm tra DMARC Record: Sử dụng [MXToolbox](https://mxtoolbox.com/blacklists.aspx) kiểm tra cấu hình DNS có bản ghi DMARC cho tên miền. -->
+
+# DNS
+
+## **DNS là gì ?**
+
+- DNS (Domain Name System) là một hệ thống cơ sở dữ liệu phân tán dùng để phân giải tên miền (ví dụ: example.com) thành địa chỉ IP (ví dụ: 192.0.2.1) và ngược lại. 
+
+## Các loại recored DNS ?
+
+- Các loại recored DNS phổ biến ngày nay:
+
+- 1. A Record: Chuyển đổi tên miền thành địa chỉ IPv4.
+- 2. AAAA Record: Chuyển đổi tên miền thành địa chỉ IPv6.
+- 3. CNAME Record: Chuyển đổi tên miền thành tên miền khác (alias).
+- 4. MX Record: Xác định máy chủ email cho một tên miền.
+- 5. TXT Record: Lưu trữ thông tin văn bản không định dạng.
+- 6. NS Record: Xác định máy chủ DNS chính cho một tên miền.
+- 7. PTR Record: Chuyển đổi địa chỉ IP thành tên miền (ngược lại của A Record).
+- 8. SOA Record: Xác định thông tin về tên miền và máy chủ DNS chính.
+
+## Nguyên tắc làm việc của DNS ?
+
