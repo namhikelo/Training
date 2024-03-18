@@ -115,3 +115,6 @@ iptables [-t table_name] -COMMAND CHAIN_NAME matches -j TARGET
 | TEE         | Sao chép và gửi gói tin đến địa chỉ khác   |
 | TOS         | Đặt trường Type of Service trong header IP  |
 | TTL         | Đặt trường Time-To-Live trong header IP    |
+
+
+VD: 
