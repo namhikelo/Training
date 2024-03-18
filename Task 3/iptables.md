@@ -170,13 +170,13 @@ iptables -t nat -A PREROUTING -i eth0 -p tcp --dport 2222 -j DNAT --to-destinati
 
 ![pic](/Task%203/img/allow.png)
 
-## So sánh giữ -A và -I
+<!-- ## So sánh giữ -A và -I
 
 - -A trong iptables được sử dụng để thêm một quy tắc vào cuối của chain.
 
 - -I được sử dụng để chèn một quy tắc vào một vị trí cụ thể trong chain.
 
-![pic](/Task%203/img/append_insert.png)
+![pic](/Task%203/img/append_insert.png) -->
 
 ## Xóa rule
 
