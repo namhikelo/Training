@@ -44,15 +44,16 @@ Gồm 2 loại:
 
 ## Lệnh trong iptables
 
-| Table   | Command      | CHAIN  | Matches  | Target/Jump   |
-|---------|--------------|--------|----------|---------------|
-| filter  | `-A` (append)  |        |          |               |
-| nat     | `-I` (insert)  |        |          |               |
-| mangl   | `-D` (delete)  |        |          |               |
-| raw     | `-R` (replace) |        |          |               |
-|         | `-F` (flush)   |        |          |               |
-|         | `-Z` (zero)    |        |          |               |
-|         | `-L` (list)    |        |          |               |
-|         | `-S` (show)    |        |          |               |
-|         | `-N` (create chain) |        |          |               |
-|         | `-X` (delete chain) |        |          |               |
+| Table   | Command        | CHAIN        | Matches       | Target/Jump   |
+|---------|----------------|--------------|---------------|---------------|
+| filter  | `-A` (append)  | INPUT        | -s source_ip |               |
+| nat     | `-I` (insert)  | OUTPUT       | -d dest_ip    |               |
+| mangle  | `-D` (delete)  | FORWARD      |               |               |
+| raw     | `-R` (replace) | PREROUTING   |               |               |
+|         | `-F` (flush)   | POSTROUTING  |               |               |
+|         | `-Z` (zero)    | USER_DEFINED |               |               |
+|         | `-L` (list)    |              |               |               |
+|         | `-S` (show)    |              |               |               |
+|         | `-N` (create chain) |          |               |               |
+|         | `-X` (delete chain) |          |               |               |
+
