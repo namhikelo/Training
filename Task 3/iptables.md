@@ -41,3 +41,18 @@ Gồm 2 loại:
 - Chain PREROUTING xử lý gói tin trước khi định tuyến, thường để thay đổi địa chỉ đích.
 
 - Chain POSTROUTING xử lý gói tin sau khi định tuyến, thường để thay đổi địa chỉ nguồn.
+
+## Lệnh trong iptables
+
+| Table   | Command      | CHAIN  | Matches  | Target/Jump   |
+|---------|--------------|--------|----------|---------------|
+| filter  | `-A` (append)  |        |          |               |
+| nat     | `-I` (insert)  |        |          |               |
+| mangl   | `-D` (delete)  |        |          |               |
+| raw     | `-R` (replace) |        |          |               |
+|         | `-F` (flush)   |        |          |               |
+|         | `-Z` (zero)    |        |          |               |
+|         | `-L` (list)    |        |          |               |
+|         | `-S` (show)    |        |          |               |
+|         | `-N` (create chain) |        |          |               |
+|         | `-X` (delete chain) |        |          |               |
