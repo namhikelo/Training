@@ -162,7 +162,7 @@ iptables -t nat -A POSTROUTING -s 192.168.10.2  -o eth0 -j MASQUERADE
 
 ![ping](/Task%203/img/ping.png)
 
-- Cấu hình NAT cho phép SSH port 2222
+Cấu hình NAT cho phép SSH port 2222
 
 ```bash
 iptables -t nat -A PREROUTING -i eth0 -p tcp --dport 2222 -j DNAT --to-destination 192.168.10.2:22
