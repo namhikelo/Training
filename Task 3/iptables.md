@@ -132,3 +132,12 @@ iptables [-t table_name] -COMMAND CHAIN_NAME matches -j TARGET
 
 
 VD: 
+
+- Chặn kết nối http đến server
+
+```bash
+iptables -A INPUT -p tcp --dport 80 -j DROP
+```
+
+![pic](/Task%203/img/blockhttp.png)
+
