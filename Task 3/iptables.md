@@ -2,7 +2,7 @@
 
 - Iptables là một tiện ích dòng lệnh trong hệ điều hành Linux, được sử dụng để quản lý tường lửa. Nó cho phép người dùng xác định và cấu hình các quy tắc để kiểm soát luồng dữ liệu qua mạng, bảo vệ máy tính và mạng khỏi các loại tấn công và truy cập không mong muốn từ bên ngoài.
 
-- Cấu trúc của iptables: `iptables` -> `Tables` -> `Chains` -> `Rules`.
+- Cấu trúc thực thi của iptables: `iptables` -> `Tables` -> `Chains` -> `Rules`.
 
 ## Các thành phần Iptables ?
 
@@ -44,16 +44,25 @@ Gồm 2 loại:
 
 ## Lệnh trong iptables
 
-| Table   | Command        | CHAIN        | Matches       | Target/Jump   |
-|---------|----------------|--------------|---------------|---------------|
-| filter  | `-A` (append)  | INPUT        | -s source_ip |               |
-| nat     | `-I` (insert)  | OUTPUT       | -d dest_ip    |               |
-| mangle  | `-D` (delete)  | FORWARD      |               |               |
-| raw     | `-R` (replace) | PREROUTING   |               |               |
-|         | `-F` (flush)   | POSTROUTING  |               |               |
-|         | `-Z` (zero)    | USER_DEFINED |               |               |
-|         | `-L` (list)    |              |               |               |
-|         | `-S` (show)    |              |               |               |
-|         | `-N` (create chain) |          |               |               |
-|         | `-X` (delete chain) |          |               |               |
+CẤU TRÚC LỆNH IPTABLES:
+
+```bash
+iptables [-t table_name] -COMMAND CHAIN_NAME matches -j TARGET
+```
+
+| Table   | Command        | CHAIN        | matches           | Target/Jump   |
+|---------|----------------|--------------|-------------------|---------------|
+| filter  | `-A` (append)  | INPUT        | -s source_ip     | ACCEPT        |
+| nat     | `-I` (insert)  | OUTPUT       | -d dest_ip       | DROP          |
+| mangle  | `-D` (delete)  | FORWARD      | -p protocol      | REJECT        |
+| raw     | `-R` (replace) | PREROUTING   | --sport source_ip | LOG           |
+|         | `-F` (flush)   | POSTROUTING  | --dport dest_ip  | SNAT          |
+|         | `-Z` (zero)    | USER_DEFINED | -i incoming_int  | DNAT          |
+|         | `-L` (list)    |              | -o outgoing_int  | MASQUERADE    |
+|         | `-S` (show)    |              | -m mac           | LIMIT         |
+|         | `-N` (create chain) |        | -m time          | RETURN        |
+|         | `-X` (delete chain) |        | -m quota         | TEE           |
+|         |                |              | -m limit         | TOS           |
+|         |                |              | -m recent        | TTL           |
+
 
