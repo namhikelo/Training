@@ -14,7 +14,7 @@
 
 ### **Filter**
 
-- Chịu trách nhiệm lọc các gói dữ liệu. Bao gồm 5 chains:
+- Chịu trách nhiệm lọc các gói dữ liệu. Bao gồm 3 chains:
 
 1. **INPUT** : Dùng để lọc các gói tin đi vào trong server.
 
@@ -24,3 +24,20 @@ VD: Chặn ping icmp
 
 2. **OUTPUT** : Dùng để  lọc gói khi ra khỏi server.
 
+VD: Chặn gói tin từ server ping đến google.com
+
+![block](/Task%203/img/filter_1.png)
+
+3. **FORWARD** : lọc các gói tin đến server khác.
+
+### **Mangle** : 
+
+- Được sử dụng để thay đổi các trường header của gói tin, bao gồm thay đổi TTL, TOS, đánh dấu gói tin, xác định dịch vụ (QoS), và chuyển hướng gói tin.
+
+### **NAT** 
+
+- Gồm 2 loại:
+
+- Chain PREROUTING xử lý gói tin trước khi định tuyến, thường để thay đổi địa chỉ đích.
+
+- Chain POSTROUTING xử lý gói tin sau khi định tuyến, thường để thay đổi địa chỉ nguồn.
