@@ -69,13 +69,49 @@ iptables [-t table_name] -COMMAND CHAIN_NAME matches -j TARGET
 
 ### Command
 
-- -A : Thêm một quy tắc vào một chain.
-- -I : Chèn một quy tắc vào một vị trí cụ thể trong chain.
-- -D : Xóa một hoặc nhiều quy tắc khỏi chain.
-- -R : Thay thế một quy tắc trong chain bằng một quy tắc mới.
-- -F : Xóa tất cả các quy tắc trong một chain.
-- -Z : Reset các counters (bộ đếm) của các quy tắc trong chain.
-- -L : Liệt kê tất cả các quy tắc trong chain.
-- -S : Hiển thị cấu hình của iptables dưới dạng script.
-- -N : Tạo một chain mới.
-- -X : Xóa một chain.
+| Command | Description                                 |
+|---------|---------------------------------------------|
+| `-A`    | Thêm một quy tắc vào một chain.            |
+| `-I`    | Chèn một quy tắc vào một vị trí cụ thể trong chain. |
+| `-D`    | Xóa một hoặc nhiều quy tắc khỏi chain.    |
+| `-R`    | Thay thế một quy tắc trong chain bằng một quy tắc mới. |
+| `-F`    | Xóa tất cả các quy tắc trong một chain.    |
+| `-Z`    | Reset các counters (bộ đếm) của các quy tắc trong chain. |
+| `-L`    | Liệt kê tất cả các quy tắc trong chain.   |
+| `-S`    | Hiển thị cấu hình của iptables dưới dạng script. |
+| `-N`    | Tạo một chain mới.                         |
+| `-X`    | Xóa một chain.                             |
+
+### matches
+
+| Matches | Description                       |
+|---------|-----------------------------------|
+| -s source_ip | So sánh địa chỉ nguồn của gói tin với `source_ip`. |
+| -d dest_ip | So sánh địa chỉ đích của gói tin với `dest_ip`. |
+| -p protocol | So sánh protocol của gói tin với `protocol`. |
+| --sport source_ip | So sánh cổng nguồn của gói tin với `source_ip`. |
+| --dport dest_ip | So sánh cổng đích của gói tin với `dest_ip`. |
+| -i incoming_int | So sánh giao diện đầu vào của gói tin với `incoming_int`. |
+| -o outgoing_int | So sánh giao diện đầu ra của gói tin với `outgoing_int`. |
+| -m mac | So sánh địa chỉ MAC của gói tin với `mac`. |
+| -m time | Sử dụng modul `time` để so sánh thời gian của gói tin. |
+| -m quota | Sử dụng modul `quota` để kiểm soát số lượng gói tin. |
+| -m limit | Sử dụng modul `limit` để giới hạn số lượng gói tin. |
+| -m recent | Sử dụng modul `recent` để kiểm soát trạng thái gần đây của gói tin. |
+
+### Tagert
+
+| Target/Jump | Description                                  |
+|-------------|----------------------------------------------|
+| ACCEPT      | Chấp nhận gói tin                           |
+| DROP        | Loại bỏ gói tin                             |
+| REJECT      | Loại bỏ gói tin và gửi thông báo từ chối   |
+| LOG         | Ghi lại thông tin vào logs                   |
+| SNAT        | Thay đổi địa chỉ nguồn của gói tin          |
+| DNAT        | Thay đổi địa chỉ đích của gói tin           |
+| MASQUERADE  | Chuyển đổi địa chỉ nguồn để ẩn danh tính   |
+| LIMIT       | Giới hạn số lượng gói tin được xử lý       |
+| RETURN      | Trả lại kết quả từ chain hiện tại          |
+| TEE         | Sao chép và gửi gói tin đến địa chỉ khác   |
+| TOS         | Đặt trường Type of Service trong header IP  |
+| TTL         | Đặt trường Time-To-Live trong header IP    |
