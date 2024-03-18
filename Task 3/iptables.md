@@ -2,7 +2,13 @@
 
 - Iptables là một tiện ích dòng lệnh trong hệ điều hành Linux, được sử dụng để quản lý tường lửa. Nó cho phép người dùng xác định và cấu hình các quy tắc để kiểm soát luồng dữ liệu qua mạng, bảo vệ máy tính và mạng khỏi các loại tấn công và truy cập không mong muốn từ bên ngoài.
 
+## Flowchart diagram
+
 - Cấu trúc thực thi của iptables: `iptables` -> `Tables` -> `Chains` -> `Rules`.
+
+![pic](/Task%203/img/chain.png)
+
+- Đầu tiên dữ liệu 
 
 ## Các thành phần Iptables ?
 
