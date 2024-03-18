@@ -63,7 +63,7 @@ CẤU TRÚC LỆNH IPTABLES:
 ```bash
 iptables [-t table_name] -COMMAND CHAIN_NAME matches -j TARGET
 ```
-
+|---------|----------------|--------------|-------------------|---------------|
 | Table   | Command        | CHAIN        | matches           | Target/Jump   |
 |---------|----------------|--------------|-------------------|---------------|
 | filter  | `-A` (append)  | INPUT        | -s source_ip     | ACCEPT        |
@@ -78,6 +78,7 @@ iptables [-t table_name] -COMMAND CHAIN_NAME matches -j TARGET
 |         | `-X` (delete chain) |        | -m quota         | TEE           |
 |         |                |              | -m limit         | TOS           |
 |         |                |              | -m recent        | TTL           |
+|---------|----------------|--------------|------------------|---------------|
 
 *Note: Nếu không chỉ định rõ table nào, mặc định là filter table sẽ được áp dụng.*
 
@@ -168,4 +169,27 @@ iptables -t nat -A PREROUTING -i eth0 -p tcp --dport 2222 -j DNAT --to-destinati
 ```
 
 ![pic](/Task%203/img/allow.png)
+
+## So sánh giữ -A và -I
+
+- -A trong iptables được sử dụng để thêm một quy tắc vào cuối của chain.
+
+- -I được sử dụng để chèn một quy tắc vào một vị trí cụ thể trong chain.
+
+![pic](/Task%203/img/append_insert.png)
+
+## Xóa rule
+
+**Xóa toàn bộ rule INPUT**
+
+```bash
+iptables -F INPUT
+```
+
+**Xóa từng rule INPUT**
+
+```bash
+iptables -L INPUT --line-number
+iptables -D INPUT {Số dòng muốn xoa}
+```
 
