@@ -8,7 +8,15 @@
 
 ![pic](/Task%203/img/chain.png)
 
-- Đầu tiên dữ liệu 
+- Dữ liệu khi truy cập sẽ được kiểm tra bởi các quy tắc trong chain PREROUTING của bảng Mangle. Sau đó, dữ liệu sẽ được kiểm tra bởi NAT Table trong PREROUTING chain để xem liệu nó cần DNAT hay không. Nếu cần, DNAT sẽ thay đổi địa chỉ đích của dữ liệu.
+
+- Dữ liệu được chuyển đến các chain INPUT, FORWARD hoặc OUTPUT dựa trên quyết định định tuyến trước đó.
+
+- Trong bảng Filter, iptables kiểm tra dữ liệu bởi các quy tắc trong chain INPUT, FORWARD hoặc OUTPUT để xác định cách xử lý tiếp theo, chẳng hạn như chấp nhận (ACCEPT), từ chối (DROP), hoặc chuyển hướng (REDIRECT).
+
+- Các quy tắc trong chain POSTROUTING của bảng Mangle được áp dụng trước khi gói tin rời khỏi hệ thống.
+
+- Kết thúc gói tin
 
 ## Các thành phần Iptables ?
 
