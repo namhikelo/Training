@@ -57,7 +57,7 @@ iptables [-t table_name] -COMMAND CHAIN_NAME matches -j TARGET
 | mangle  | `-D` (delete)  | FORWARD      | -p protocol      | REJECT        |
 | raw     | `-R` (replace) | PREROUTING   | --sport source_ip | LOG           |
 |         | `-F` (flush)   | POSTROUTING  | --dport dest_ip  | SNAT          |
-|         | `-Z` (zero)    | USER_DEFINED | -i incoming_int  | DNAT          |
+|         | `-Z` (zero)    |              | -i incoming_int  | DNAT          |
 |         | `-L` (list)    |              | -o outgoing_int  | MASQUERADE    |
 |         | `-S` (show)    |              | -m mac           | LIMIT         |
 |         | `-N` (create chain) |        | -m time          | RETURN        |
@@ -65,4 +65,17 @@ iptables [-t table_name] -COMMAND CHAIN_NAME matches -j TARGET
 |         |                |              | -m limit         | TOS           |
 |         |                |              | -m recent        | TTL           |
 
+*Note: Nếu không chỉ định rõ table nào, mặc định là filter table sẽ được áp dụng.*
 
+### Command
+
+- -A : Thêm một quy tắc vào một chain.
+- -I : Chèn một quy tắc vào một vị trí cụ thể trong chain.
+- -D : Xóa một hoặc nhiều quy tắc khỏi chain.
+- -R : Thay thế một quy tắc trong chain bằng một quy tắc mới.
+- -F : Xóa tất cả các quy tắc trong một chain.
+- -Z : Reset các counters (bộ đếm) của các quy tắc trong chain.
+- -L : Liệt kê tất cả các quy tắc trong chain.
+- -S : Hiển thị cấu hình của iptables dưới dạng script.
+- -N : Tạo một chain mới.
+- -X : Xóa một chain.
