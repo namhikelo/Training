@@ -36,7 +36,7 @@ VD: Chặn gói tin từ server ping đến google.com
 
 ### **NAT** 
 
-- Gồm 2 loại:
+Gồm 2 loại:
 
 - Chain PREROUTING xử lý gói tin trước khi định tuyến, thường để thay đổi địa chỉ đích.
 
