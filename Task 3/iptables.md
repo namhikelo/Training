@@ -52,9 +52,9 @@ VD: Chặn gói tin từ server ping đến google.com
 
 Gồm 2 loại:
 
-- Chain PREROUTING xử lý gói tin trước khi định tuyến, thường để thay đổi địa chỉ đích.
+- Chain PREROUTING xử lý gói tin trước khi định tuyến, để thay đổi địa chỉ đích.
 
-- Chain POSTROUTING xử lý gói tin sau khi định tuyến, thường để thay đổi địa chỉ nguồn.
+- Chain POSTROUTING xử lý gói tin sau khi định tuyến, để thay đổi địa chỉ nguồn.
 
 ## Lệnh trong iptables
 
