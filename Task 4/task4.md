@@ -114,7 +114,18 @@ Cài đặt opensll:
 apt-get install openssl
 ```
 
-Script generate CSR + Private key: [Link]()
+Script generate CSR + Private key: [Link](https://github.com/namhikelo/Training_Vietnix/blob/main/script/SSL.sh)
 
+## Giải thích được quá trình request SSL từ lúc gửi file csr đến CA và lúc xác thực là chủ sở hữu domain
 
+![pic](/Task%204/img/csr.png)
 
+Quá trình yêu cầu SSL bao gồm các bước sau:
+
+- Tạo CSR (Certificate Signing Request): Người dùng tạo một CSR chứa thông tin về trang web và khóa công khai, sau đó gửi nó đến CA.
+
+- Gửi CSR đến CA (Certificate Authority): CSR được gửi đến CA để yêu cầu chứng chỉ SSL.
+
+- Xác thực chủ sở hữu domain: CA xác minh thông tin trong CSR để đảm bảo rằng người yêu cầu thực sự là chủ sở hữu hoặc có quyền kiểm soát domain.
+
+- Ký và cấp chứng chỉ SSL: Sau khi xác thực, CA ký và cấp chứng chỉ SSL, chứa thông tin về domain và khóa công khai của nó.
