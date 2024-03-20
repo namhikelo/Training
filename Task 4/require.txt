@@ -1,0 +1,5 @@
+Stage 4: Dùng một ngôn ngữ tùy chọn như: python, javascript, golang, bash shell, perl,... Viết các script sau:
+
+Script backup mysql, lưu 3 bản gần nhất, sync lên google drive
+
+Script generate CSR + private key dùng để request SSL. Giải thích được quá trình request SSL từ lúc gửi file csr đến CA và lúc xác thực là chủ sở hữu domain.
