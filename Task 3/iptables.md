@@ -20,11 +20,12 @@
 
 ## Các thành phần Iptables ?
 
-- Iptables kiểm tra mọi gói dữ liệu bằng cách sử dụng các bảng được xây dựng sẵn (tables), bao gồm 3 loại bảng chính:
+- Iptables kiểm tra mọi gói dữ liệu bằng cách sử dụng các bảng được xây dựng sẵn (tables), bao gồm 4 loại bảng chính:
 
 1. **Filter**
 2. **Mangle**
 3. **NAT**
+4. **Raw**
 
 ### **Filter**
 
@@ -42,7 +43,7 @@ VD: Chặn gói tin từ server ping đến google.com
 
 ![block](/Task%203/img/filter_1.png)
 
-3. **FORWARD** : lọc các gói tin đến server khác.
+3. **FORWARD** : Lọc các gói tin đến server khác.
 
 ### **Mangle** : 
 
@@ -55,6 +56,10 @@ Gồm 2 loại:
 - Chain PREROUTING xử lý gói tin trước khi định tuyến, để thay đổi địa chỉ đích.
 
 - Chain POSTROUTING xử lý gói tin sau khi định tuyến, để thay đổi địa chỉ nguồn.
+
+### **Raw** : 
+
+- Bảng này dùng để cấu hình không theo dõi các kết nối .
 
 ## Lệnh trong iptables
 

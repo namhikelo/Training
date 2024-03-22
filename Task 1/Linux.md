@@ -385,6 +385,12 @@ Sao chép file giữa hai máy từ xa:
 scp user1@remote_host1:/home/user1/file.txt user2@remote_host2:/home/user2/
 ```
 
+Sao chép thư mục từ máy từ xa khác port sang máy cục bộ :
+
+```bash
+scp -P 2222 file.txt user@remote_host:/home/user/
+```
+
 ## Xem nhanh nội dung của file.
 
 Lệnh ``cat`` là một công cụ dòng lệnh cho phép bạn xem nội dung của file văn bản.
@@ -424,6 +430,18 @@ rsync -auv /local/directory user@remote_host:/home/user/
 -u để chỉ cập nhật file mới hơn hoặc đã thay đổi trên máy đích.
 -i để bỏ qua file không thay đổi.
 ```
+
+## So sánh rsync và scp
+
+Hiệu suất:
+
+- rsync: Thường nhanh hơn vì chỉ sao chép các phần của tệp đã thay đổi.
+- scp: Sao chép dữ liệu tuần tự, thường chậm hơn rsync.
+
+Đồng bộ hóa:
+
+- rsync: Đồng bộ hóa dữ liệu, chỉ sao chép các phần đã thay đổi, tiết kiệm băng thông và thời gian.
+- scp: Không cung cấp tính năng đồng bộ hóa.
 
 ## Chèn một đoạn text vào cuối file.
 
