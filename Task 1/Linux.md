@@ -281,6 +281,16 @@ Hard links là các liên kết giữa tên và dữ liệu thực của một t
 
 ![hard_link](/img/hardlink.png)
 
+Tóm tắt:
+
+- Symlink: Tạo liên kết đến vị trí khác, dễ di chuyển, chia sẻ, nhưng có thể bị hỏng.
+- Hardlink: Tạo liên kết đến cùng dữ liệu, tiết kiệm dung lượng, nhưng chỉ hoạt động trên cùng hệ thống tập tin.
+
+#### Khi nào dùng Symlinks và Hard Links
+
+- Symlink: Tập tin thay đổi thường xuyên, cần chia sẻ.
+- Hardlink: Tập tin ít thay đổi, cần tiết kiệm dung lượng.
+
 ## Nén/Giải nén file tar.gz
 
 Lệnh ``tar`` là một công cụ trong Linux để tạo, quản lý và giải nén các tập tin được nén hoặc sao lưu.
