@@ -173,6 +173,15 @@ Lệnh để kiểm tra tiến trình trên hệ thống Linux là ``ps``.
 
 ![kill](/img/kill.png)
 
+### pkill
+
+[pic](/img/pkill.png)
+
+### So sánh
+
+- kill: Chỉ tác động vào các tiến trình dựa trên ID của tiến trình (PID). Bạn cần biết PID của tiến trình mà bạn muốn kết thúc.
+- pkill: Cho phép bạn tác động vào các tiến trình dựa trên tên tiến trình, tên người dùng chạy tiến trình.
+
 ## Liệt kê danh sách file/thư mục, cách show các file ẩn trong thư mục
 
 Lệnh ``ls`` liệt kê danh sách các file và thư mục trong thư mục hiện tại.
