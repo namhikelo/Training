@@ -59,7 +59,7 @@ Gồm 2 loại:
 
 ### **Raw** : 
 
-- Bảng này dùng để cấu hình không theo dõi các kết nối .
+- Bảng này dùng để cấu hình theo dõi các kết nối .
 
 ## Lệnh trong iptables
 
