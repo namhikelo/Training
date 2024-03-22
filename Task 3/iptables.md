@@ -59,7 +59,7 @@ Gồm 2 loại:
 
 ### **Raw** : 
 
-- Bảng này dùng để cấu hình theo dõi các kết nối .
+- Bảng này giúp người dùng có thể làm việc với gói tin trước khi kernel thực hiện kiểm tra trạng thái.
 
 ## Lệnh trong iptables
 

@@ -175,6 +175,8 @@ Lệnh để kiểm tra tiến trình trên hệ thống Linux là ``ps``.
 
 ### pkill
 
+- Lệnh pkill được sử dụng để kết thúc các tiến trình dựa trên tên tiến trình, tên người dùng chạy tiến trình, nhóm tiến trình.
+
 [pic](/img/pkill.png)
 
 ### So sánh
