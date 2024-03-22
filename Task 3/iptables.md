@@ -68,6 +68,7 @@ CẤU TRÚC LỆNH IPTABLES:
 ```bash
 iptables [-t table_name] -COMMAND CHAIN_NAME matches -j TARGET
 ```
+
 |---------|----------------|--------------|-------------------|---------------|
 | Table   | Command        | CHAIN        | matches           | Target/Jump   |
 |---------|----------------|--------------|-------------------|---------------|
