@@ -550,7 +550,7 @@ Các trạng thái của netstat:
 
 - ESTABLISHED: Kết nối đang hoạt động.
 - TIME_WAIT: Kết nối đã đóng, đang chờ xử lý cuối cùng.
-- CLOSE_WAIT: Kết nối local đã đóng, nhưng remote vẫn gửi dữ liệu.
+- CLOSE_WAIT: Kết nối local đã đóng, nhưng vẫn gửi dữ liệu.
 - LISTEN: Máy chủ đang chờ kết nối.
 - SYN_SENT: Đang chờ xác nhận từ máy chủ.
 - SYN_RECV: Đã nhận yêu cầu kết nối, đang chờ xác nhận.
