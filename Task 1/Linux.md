@@ -533,8 +533,6 @@ g: Thay thế tất cả các lần xuất hiện của chuỗi cần tìm.
 
 - Lệnh ``netstat`` là một công cụ dòng lệnh mạnh mẽ để hiển thị thông tin chi tiết về các kết nối mạng của máy tính.
 
-Cấu trúc:
-
 ```bash
 netstat [option]
 
@@ -548,7 +546,16 @@ netstat [option]
 
 ![netstat](/img/netstat.png)
 
-## Print command 
+Các trạng thái của netstat:
+
+- ESTABLISHED: Kết nối đang hoạt động.
+- TIME_WAIT: Kết nối đã đóng, đang chờ xử lý cuối cùng.
+- CLOSE_WAIT: Kết nối local đã đóng, nhưng remote vẫn gửi dữ liệu.
+- LISTEN: Máy chủ đang chờ kết nối.
+- SYN_SENT: Đang chờ xác nhận từ máy chủ.
+- SYN_RECV: Đã nhận yêu cầu kết nối, đang chờ xác nhận.
+
+## Print command
 
 - Lệnh ``print`` trong Ubuntu có thể được sử dụng để in tệp văn bản, hình ảnh và các loại dữ liệu khác. Lệnh này có nhiều tùy chọn để định dạng đầu ra và kiểm soát cách thức in ấn.
 
